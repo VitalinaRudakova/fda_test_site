@@ -1,0 +1,1277 @@
+﻿/*
+	(с) Юрий Лазаренко, Севастополь
+	e-mail lazarenkoyv@mail.ru
+	v-can.Site
+	v 6.2.1.4
+	07.01.2022
+*/
+
+   
+.modalwin { 
+	top: 20%;
+	right: 0;
+	left: 0;
+	margin: 0 auto;
+	z-index: 102;
+	display: none;
+	position: fixed;
+	padding: 15px;
+}
+
+div.modalwinshadow {
+	position: fixed;
+	width: 100%;
+	height: 100%;
+	z-index: 101;
+	background: #000;
+	opacity: 0.2;
+	left: 0;
+	top: 0;
+}
+
+div.modalwinshadow.loading { 
+    background-image: url(assets/images/ajax-loader.gif);
+    background-repeat: no-repeat;
+    background-position: center;	
+}
+
+/* Радиокнопки и флажки */
+
+.checkbox {
+    padding-left: 20px; }
+.checkbox label {
+    display: inline-block;
+    position: relative;
+    padding-left: 5px; }
+.checkbox label::before {
+    content: "";
+    display: inline-block;
+    position: absolute;
+    width: 17px;
+    height: 17px;
+    left: 0;
+    margin-left: -20px;
+    border: 1px solid #cccccc;
+    border-radius: 3px;
+    background-color: #fff;
+    -webkit-transition: border 0.15s ease-in-out, color 0.15s ease-in-out;
+    -o-transition: border 0.15s ease-in-out, color 0.15s ease-in-out;
+    transition: border 0.15s ease-in-out, color 0.15s ease-in-out; }
+.checkbox label::after {
+    display: inline-block;
+    position: absolute;
+    width: 16px;
+    height: 16px;
+    left: 0;
+    top: 0;
+    margin-left: -20px;
+    padding-left: 3px;
+    padding-top: 1px;
+    font-size: 11px;
+    color: #555555; }
+.checkbox input[type="checkbox"] {
+    opacity: 0; }
+.checkbox input[type="checkbox"]:focus + label::before {
+    outline: thin dotted;
+    outline: 5px auto -webkit-focus-ring-color;
+    outline-offset: -2px; }
+.checkbox input[type="checkbox"]:checked + label::after {
+    font-family: 'FontAwesome';
+    content: "\f00c"; }
+.checkbox input[type="checkbox"]:disabled + label {
+    opacity: 0.65; }
+.checkbox input[type="checkbox"]:disabled + label::before {
+    background-color: #eeeeee;
+    cursor: not-allowed; }
+.checkbox.checkbox-circle label::before {
+    border-radius: 50%; }
+.checkbox.checkbox-inline {
+    margin-top: 0; }
+
+.checkbox-primary input[type="checkbox"]:checked + label::before {
+    background-color: #428bca;
+    border-color: #428bca; }
+.checkbox-primary input[type="checkbox"]:checked + label::after {
+    color: #fff; }
+
+.checkbox-danger input[type="checkbox"]:checked + label::before {
+    background-color: #d9534f;
+    border-color: #d9534f; }
+.checkbox-danger input[type="checkbox"]:checked + label::after {
+    color: #fff; }
+
+.checkbox-info input[type="checkbox"]:checked + label::before {
+    background-color: #5bc0de;
+    border-color: #5bc0de; }
+.checkbox-info input[type="checkbox"]:checked + label::after {
+    color: #fff; }
+
+.checkbox-warning input[type="checkbox"]:checked + label::before {
+    background-color: #f0ad4e;
+    border-color: #f0ad4e; }
+.checkbox-warning input[type="checkbox"]:checked + label::after {
+    color: #fff; }
+
+.checkbox-success input[type="checkbox"]:checked + label::before {
+    background-color: #5cb85c;
+    border-color: #5cb85c; }
+.checkbox-success input[type="checkbox"]:checked + label::after {
+    color: #fff; }
+
+.radio {
+    padding-left: 20px; }
+.radio label {
+    display: inline-block;
+    position: relative;
+    padding-left: 5px; }
+.radio label::before {
+    content: "";
+    display: inline-block;
+    position: absolute;
+    width: 17px;
+    height: 17px;
+    left: 0;
+    margin-left: -20px;
+    border: 1px solid #cccccc;
+    border-radius: 50%;
+    background-color: #fff;
+    -webkit-transition: border 0.15s ease-in-out;
+    -o-transition: border 0.15s ease-in-out;
+    transition: border 0.15s ease-in-out; }
+.radio label::after {
+    display: inline-block;
+    position: absolute;
+    content: " ";
+    width: 11px;
+    height: 11px;
+    left: 3px;
+    top: 3px;
+    margin-left: -20px;
+    border-radius: 50%;
+    background-color: #555555;
+    -webkit-transform: scale(0, 0);
+    -ms-transform: scale(0, 0);
+    -o-transform: scale(0, 0);
+    transform: scale(0, 0);
+    -webkit-transition: -webkit-transform 0.1s cubic-bezier(0.8, -0.33, 0.2, 1.33);
+    -moz-transition: -moz-transform 0.1s cubic-bezier(0.8, -0.33, 0.2, 1.33);
+    -o-transition: -o-transform 0.1s cubic-bezier(0.8, -0.33, 0.2, 1.33);
+    transition: transform 0.1s cubic-bezier(0.8, -0.33, 0.2, 1.33); }
+.radio input[type="radio"] {
+    opacity: 0; }
+.radio input[type="radio"]:focus + label::before {
+    outline: thin dotted;
+    outline: 5px auto -webkit-focus-ring-color;
+    outline-offset: -2px; }
+.radio input[type="radio"]:checked + label::after {
+    -webkit-transform: scale(1, 1);
+    -ms-transform: scale(1, 1);
+    -o-transform: scale(1, 1);
+    transform: scale(1, 1); }
+.radio input[type="radio"]:disabled + label {
+    opacity: 0.65; }
+.radio input[type="radio"]:disabled + label::before {
+    cursor: not-allowed; }
+.radio.radio-inline {
+    margin-top: 0; }
+
+.radio-primary input[type="radio"] + label::after {
+    background-color: #428bca; }
+.radio-primary input[type="radio"]:checked + label::before {
+    border-color: #428bca; }
+.radio-primary input[type="radio"]:checked + label::after {
+    background-color: #428bca; }
+
+.radio-danger input[type="radio"] + label::after {
+    background-color: #d9534f; }
+.radio-danger input[type="radio"]:checked + label::before {
+    border-color: #d9534f; }
+.radio-danger input[type="radio"]:checked + label::after {
+    background-color: #d9534f; }
+
+.radio-info input[type="radio"] + label::after {
+    background-color: #5bc0de; }
+.radio-info input[type="radio"]:checked + label::before {
+    border-color: #5bc0de; }
+.radio-info input[type="radio"]:checked + label::after {
+    background-color: #5bc0de; }
+
+.radio-warning input[type="radio"] + label::after {
+    background-color: #f0ad4e; }
+.radio-warning input[type="radio"]:checked + label::before {
+    border-color: #f0ad4e; }
+.radio-warning input[type="radio"]:checked + label::after {
+    background-color: #f0ad4e; }
+
+.radio-success input[type="radio"] + label::after {
+    background-color: #5cb85c; }
+.radio-success input[type="radio"]:checked + label::before {
+    border-color: #5cb85c; }
+.radio-success input[type="radio"]:checked + label::after {
+    background-color: #5cb85c; }
+
+	
+/* Оформление формы списка */	
+	
+.ListFormRow.RefGroup .ListFormIconTD{
+	background-image: url(assets/images/listformiconrefgroup.png);
+	background-repeat: no-repeat;
+	background-position: 2px;
+	padding-left: 22px;
+}
+
+.ListFormRow.RefItem .ListFormIconTD{
+	background-image: url(assets/images/listformiconrefitem.png);
+	background-repeat: no-repeat;
+	background-position: 2px;
+	padding-left: 22px;
+}
+
+.ListFormRow.RefGroup .ListFormIconTD.level1{
+	background-position: 22px;
+	padding-left: 42px;
+}
+
+.ListFormRow.RefGroup .ListFormIconTD.level2{
+	background-position: 42px;
+	padding-left: 62px;
+}
+
+.ListFormRow.RefGroup .ListFormIconTD.level3{
+	background-position: 62px;
+	padding-left: 82px;
+}
+
+.ListFormRow.RefGroup .ListFormIconTD.level4{
+	background-position: 82px;
+	padding-left: 102px;
+}
+
+.ListFormRow.RefGroup .ListFormIconTD.level5{
+	background-position: 102px;
+	padding-left: 122px;
+}
+
+.ListFormRow.RefGroup .ListFormIconTD.level6{
+	background-position: 122px;
+	padding-left: 142px;
+}
+
+.ListFormRow.RefGroup .ListFormIconTD.level7{
+	background-position: 142px;
+	padding-left: 162px;
+}
+
+.ListFormRow.RefGroup .ListFormIconTD.level8{
+	background-position: 162px;
+	padding-left: 182px;
+}
+
+.ListFormRow.RefGroup .ListFormIconTD.level9{
+	background-position: 182px;
+	padding-left: 202px;
+}
+
+.ListFormRow.RefGroup .ListFormIconTD.level10{
+	background-position: 202px;
+	padding-left: 222px;
+}
+
+.ListFormRow.RefItem .ListFormIconTD.level1{
+	background-position: 22px;
+	padding-left: 42px;
+}
+
+.ListFormRow.RefItem .ListFormIconTD.level2{
+	background-position: 42px;
+	padding-left: 62px;
+}
+
+.ListFormRow.RefItem .ListFormIconTD.level3{
+	background-position: 62px;
+	padding-left: 82px;
+}
+
+.ListFormRow.RefItem .ListFormIconTD.level4{
+	background-position: 82px;
+	padding-left: 102px;
+}
+
+.ListFormRow.RefItem .ListFormIconTD.level5{
+	background-position: 102px;
+	padding-left: 122px;
+}
+
+.ListFormRow.RefItem .ListFormIconTD.level6{
+	background-position: 122px;
+	padding-left: 142px;
+}
+
+.ListFormRow.RefItem .ListFormIconTD.level7{
+	background-position: 142px;
+	padding-left: 162px;
+}
+
+.ListFormRow.RefItem .ListFormIconTD.level8{
+	background-position: 162px;
+	padding-left: 182px;
+}
+
+.ListFormRow.RefItem .ListFormIconTD.level9{
+	background-position: 182px;
+	padding-left: 202px;
+}
+
+.ListFormRow.RefItem .ListFormIconTD.level10{
+	background-position: 202px;
+	padding-left: 222px;
+}
+
+td.ListFormTreeIconTD{
+	background-repeat: no-repeat;
+	background-position: center;
+	width: 28px;
+}
+
+th.ListFormTreeIconTD{
+	width: 28px;
+}
+
+td.ListFormTreeIconTD.HList{
+	background-image: url(assets/images/listformiconierarchy.png);
+}
+
+td.ListFormTreeIconTD.HList.Expanded{
+	background-image: url(assets/images/listformiconierarchyexpanded.png);
+}
+
+td.ListFormTreeIconTD.Tree{
+	background-image: url(assets/images/listformicontree.png);
+}
+
+td.ListFormTreeIconTD.Tree.Expanded{
+	background-image: url(assets/images/listformicontreeexpanded.png);
+}
+
+.ListFormRow.DocItem .ListFormIconTD{
+	background-image: url(assets/images/listformicondocitem.png);
+	background-repeat: no-repeat;
+	background-position: 2px 8px;
+	padding-left: 22px;
+}
+
+.ListFormRow.DocPosted .ListFormIconTD{
+	background-image: url(assets/images/listformicondocposted.png);
+	background-repeat: no-repeat;
+	background-position: 2px 8px;
+	padding-left: 22px;
+}
+
+.ListFormRow.DocDeleted .ListFormIconTD{
+	background-image: url(assets/images/listformicondocdeleted.png);
+	background-repeat: no-repeat;
+	background-position: 2px 8px;
+	padding-left: 22px;
+}
+
+
+/* Список редактируемый */
+
+table.listFormEditable > tbody > tr > td{
+	padding: 0px;
+}
+
+table.listFormEditable > tbody > tr > td > div > span.input-group-addon{
+	display: none;
+}
+
+table.listFormEditable > tbody > tr > td > div > input,
+table.listFormEditable > tbody > tr > td > input{
+	border: 0px;
+	padding: 6px 8px;	
+}
+
+table.listFormEditable > tbody > tr > td > div > input[disabled],
+table.listFormEditable > tbody > tr > td > input[disabled]{
+	cursor: default;
+}
+
+table.listFormEditable > tbody > tr > td > div > input::-webkit-outer-spin-button,
+table.listFormEditable > tbody > tr > td > input::-webkit-inner-spin-button,
+table.listFormEditable > tbody > tr > td > div > input::-moz-outer-spin-button,
+table.listFormEditable > tbody > tr > td > input::-moz-inner-spin-button{
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    margin: 0;
+}
+
+/* Список редактируемый, строка под курсором мыши */
+/*
+table.listFormEditable > tbody > tr:hover > td > div > span.input-group-addon{
+	display: table-cell;
+	padding: 0px;
+	background-color: unset;
+	border: 0px;
+}
+*/
+
+/* Список редактируемый, активная строка */
+table.listFormEditable > tbody > tr.active > td > div > span.input-group-addon{
+	display: table-cell;
+	padding: 0px;
+	background-color: unset;
+	border: 0px;
+}
+
+table.listFormEditable > tbody > tr.active > td > div > input,
+table.listFormEditable > tbody > tr.active > td > input{
+	background: unset;
+}
+
+table.listFormEditable > tbody > tr.active > td > div > input::-webkit-outer-spin-button,
+table.listFormEditable > tbody > tr.active > td > input::-webkit-inner-spin-button,
+table.listFormEditable > tbody > tr.active > td > div > input::moz-outer-spin-button,
+table.listFormEditable > tbody > tr.active > td > input::moz-inner-spin-button{
+    -webkit-appearance: normal;
+    margin: unset;
+}
+
+
+/* Элементы формы */
+
+span.inputtitle{
+    display: table-cell;
+	vertical-align: middle;
+}
+
+span.inputfield{
+    width: 100%;
+    display: table-cell;
+}
+
+div.tab-content{
+	border-bottom: 1px solid #dddddd;
+	border-left: 1px solid #dddddd;
+	border-right: 1px solid #dddddd;
+	padding: 1px 10px 6px;
+
+}
+
+.digitContent { 
+	text-align: right;
+	white-space: nowrap;
+}
+
+input.digit-content { 
+	text-align: right;
+}
+
+.nobr { 
+	white-space: nowrap;
+}
+
+div.tablecell{
+    padding: 6px;
+    min-height: 36px;
+    max-height: 36px;
+    overflow: hidden;
+    /*white-space: nowrap;*/
+}
+
+input.required{
+	border-bottom: red 2px dotted;
+}
+
+input.searchInput{
+	display: unset;
+    width: auto;
+}
+
+span.searchInputReset{
+    /*position: relative;*/
+    /*left: -30px;*/
+    top: 0px;
+    font-size: x-small;
+    color: #aaaaaa;
+	/*display: inline;*/
+    cursor: pointer;
+    /*padding: 7px;	*/
+    padding-top: 9px;
+    padding-right: 20px;
+	background: white;
+}
+
+span.searchInputReset:hover{
+    color: #777777;
+}
+
+span.input-group-addon {
+    padding: 0px 4px;
+}
+	
+span.menu_searchInputReset{
+    top: 0px;
+    font-size: small;
+    color: #aaaaaa;
+    cursor: pointer;
+    padding: 0px 10px;
+	background: white;
+	width: 30px;
+}	
+	
+/* Элементы формы объекта */
+
+div.objectform div.row{
+	margin-top: 10px;
+	margin-bottom: 5px;
+}
+
+div.objectform label.title{
+	padding-top: 6px;
+	padding-right: 5px;
+	white-space: nowrap;
+}
+
+div.objectform label.multirow{
+	padding-top: 0px;
+	margin-top: -4px;
+}
+
+div.objectform div.pages{
+	padding: 0px 15px;
+}
+
+/* Резиновые формы */
+
+span.inputfield-fit{
+    width: unset;
+	padding: 0px 5px;
+    display: table-cell;
+}
+
+span.inputfield-fit span.inputtitle{
+	float:left;
+}
+
+div.objectform div.row-fit{
+	margin-left: -20px;
+	margin-right: -20px;
+}
+
+
+/* Форма загрузки файлов */
+
+.FileTransferFileList{
+	width: 100%;
+	white-space: nowrap;
+	table-layout: fixed;
+	border-collapse: separate;
+	border-spacing: 10px 3px;
+}
+
+.FileTransferDragElem{
+	text-align: center;
+	border: 2px dashed silver;
+	border-radius: 5px;
+}
+
+.FileTransferFileSelectInput{
+	position: relative;
+	width: 100%;
+	/* margin-left: -140px; */
+	cursor: pointer;
+	height: 21px;
+	z-index: 2;
+	filter: alpha(opacity=0);
+	opacity: 0;
+}
+.FileTransferFileSelectFakeButton{
+	/*position: absolute;*/
+	z-index: 1;
+	width: 100%;
+	height: 21px;
+}
+
+.FileTransferFileList .FileTransferTable_FileName{
+	width: 50%;
+	overflow-x: hidden;
+	text-overflow: ellipsis;
+}
+
+.FileTransferFileList .FileTransferTable_FileSize{
+	width: 20%;
+}
+
+.FileTransferFileList .FileTransferTable_Progress{
+	width: 10%;
+	text-align: right;}
+	
+.FileTransferFileList .FileTransferTable_Actions{
+	width: 10%;
+	text-align: right;}
+
+/* Сортировка таблиц */
+
+.listContainer{
+	/* Запрет выделения содержимого таблицы */
+    user-select: none;
+	/* width: 0; */
+}
+
+/* Сортировка таблиц */
+
+th.listsorting, div.listsorting{
+	cursor: pointer;
+    background-position: right;
+    background-repeat: no-repeat;
+    background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABMAAAATCAQAAADYWf5HAAAAkElEQVQoz7XQMQ5AQBCF4dWQSJxC5wwax1Cq1e7BAdxD5SL+Tq/QCM1oNiJidwox0355mXnG/DrEtIQ6azioNZQxI0ykPhTQIwhCR+BmBYtlK7kLJYwWCcJA9M4qdrZrd8pPjZWPtOqdRQy320YSV17OatFC4euts6z39GYMKRPCTKY9UnPQ6P+GtMRfGtPnBCiqhAeJPmkqAAAAAElFTkSuQmCC');
+}
+
+th.listsorting:hover, div.listsorting:hover{
+    background-color: #eeeeee;
+}
+
+th.listsorting.sorting-asc, div.listsorting.sorting-asc{
+    background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABMAAAATCAYAAAByUDbMAAAAZ0lEQVQ4y2NgGLKgquEuFxBPAGI2ahhWCsS/gDibUoO0gPgxEP8H4ttArEyuQYxAPBdqEAxPBImTY5gjEL9DM+wTENuQahAvEO9DMwiGdwAxOymGJQLxTyD+jgWDxCMZRsEoGAVoAADeemwtPcZI2wAAAABJRU5ErkJggg==');
+}
+
+th.listsorting.sorting-desc, div.listsorting.sorting-desc{
+    background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABMAAAATCAYAAAByUDbMAAAAZUlEQVQ4y2NgGAWjYBSggaqGu5FA/BOIv2PBIPFEUgxjB+IdQPwfC94HxLykus4GiD+hGfQOiB3J8SojEE9EM2wuSJzcsFMG4ttQgx4DsRalkZENxL+AuJQaMcsGxBOAmGvopk8AVz1sLZgg0bsAAAAASUVORK5CYII=');
+}
+
+
+/* Таблица с фиксированной шапкой */
+
+table.fixed-header tr {
+width: 100%;
+display: inline-table;
+table-layout: auto;
+}
+
+table.fixed-header{
+ /*height:300px;*/
+ display: -moz-groupbox;
+}
+
+table.fixed-header tbody{
+  overflow-y: auto;
+  /*height: 200px;*/
+  width: 100%;
+  position: absolute;
+}
+
+table.fixed-header th{
+  overflow-x: hidden;
+}
+
+table.fixed-header td{
+  overflow-x: hidden;
+}
+
+
+/* Заголовки таблицы */
+
+div.tableheader{
+    white-space: nowrap;
+    border: 0px;
+	padding: 6px;
+}
+
+th.tableheader{
+	padding: 0px;
+	vertical-align: top;	
+}
+
+/* Таблица с несколькими ячейками в одной колонке */
+
+div.rowspan{
+	padding: 6px;
+    margin: -6px;
+}
+
+/* Ширина элементов */
+
+.w-1pc   {width: 1%}
+.w-2pc   {width: 2%}
+.w-3pc   {width: 3%}
+.w-5pc   {width: 5%}
+.w-6pc   {width: 6%}
+.w-7pc   {width: 7%}
+.w-8pc   {width: 8%}
+.w-9pc   {width: 9%}
+.w-10pc  {width: 10%}
+.w-15pc  {width: 15%}
+.w-20pc  {width: 20%}
+.w-25pc  {width: 25%}
+.w-33pc  {width: 33%}
+.w-50pc  {width: 50%}
+.w-66pc  {width: 66%}
+.w-75pc  {width: 75%}
+.w-80pc  {width: 80%}
+.w-90pc  {width: 90%}
+.w-100pc {width: 100%}
+
+
+/* Текстовый редактор */
+
+div.texteditor {
+	width: 100%;
+	min-height: 50px;
+    max-height: 200px;
+    overflow: auto;	
+	padding: 3px 10px;
+	border: 1px solid #cccccc;
+	border-radius: 4px;
+    -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
+    box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
+    -webkit-transition: border-color ease-in-out .15s, -webkit-box-shadow ease-in-out .15s;
+    -o-transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s;
+    transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s;
+}
+
+div.texteditor:focus{	
+    border-color: #66afe9;
+}
+
+img.texteditor-preview{
+    max-width: 400px;
+    max-height: 200px;	
+}
+
+/* Состояние() */
+
+#БлокСостояние{
+    position: fixed;
+    right: 10px;
+    bottom: 40px;
+	width: 20%;
+	left: 79%;  cursor: default;
+	transition: height .45s ease-in-out;
+	-webkit-transition: height .45s ease-in-out;
+	pointer-events: none;
+	z-index: 1000;
+}
+  
+.note-item{ 
+	/*max-height: 12em;*/
+	opacity: 1;
+	will-change: opacity, transform;
+	transition: all .2s linear;
+	-webkit-transition: all .2s linear;
+	backface-visibility: hidden;
+	-webkit-backface-visibility: hidden;
+	-moz-backface-visibility: hidden;
+	-ms-backface-visibility: hidden;
+	-webkit-touch-callout: none;
+	user-select: none;
+	-webkit-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	-o-user-select: none;
+	pointer-events: auto;
+	display: -webkit-box;
+	display: -webkit-flex;
+	display: -moz-flex;
+	display: -ms-flex;
+	display: -ms-flexbox;
+	display: flex;
+	-webkit-align-content: flex-start;
+	-ms-flex-line-pack: start;
+	align-content: flex-start;
+	-webkit-box-align: start;
+	-ms-flex-align: start;
+	-webkit-align-items: flex-start;
+	-moz-align-items: flex-start;
+	align-items: flex-start;
+	-webkit-align-content :flex-start;
+	-ms-flex-line-pack: start;
+	align-content: flex-start;
+	@media all and (max-width: 30em){
+		width: 75vw;
+		max-width: none;
+	}   
+	max-width: 20em;
+	font: inherit;
+	line-height: 1.25em;
+	color: #fff;
+	margin: 0 auto 1em auto;
+	transform: translateZ(0);
+	-moz-transform: translateZ(0);
+	-ms-transform: translateZ(0);
+	-webkit-transform: translateZ(0);
+	padding: .75em 1em;
+	border-radius: 4px;
+}
+  
+div[data-show="false"]{
+	pointer-events: none;
+	opacity: 0 !important;
+	max-height: 0 !important;
+	margin-bottom: 0 !important;
+} 
+
+div[data-type="ordinary"]{
+	background-color: rgba(218, 218, 218, 0.9);
+	color: #000000;
+} 
+
+div[data-type="info"]{
+	background-color: rgba(55, 94, 151, 0.9);
+} 
+
+div[data-type="warn"]{
+	background-color: rgba(235, 172, 0, 0.9);
+	animation: shake .9s cubic-bezier(.36,.07,.19,.97) both;
+	-webkit-animation: shake .9s cubic-bezier(.36,.07,.19,.97) both;	
+} 
+
+div[data-type="error"]{
+	background-color: rgba(251, 101, 66, 0.9);
+	animation: shake 0.54s cubic-bezier(.36,.07,.19,.97) both;
+	-webkit-animation: shake 0.54s cubic-bezier(.36,.07,.19,.97) both;
+} 
+
+div[data-type="success"]{
+	background-color: rgba(63, 104, 28, 0.9);
+} 
+  
+.note-item-text{
+	flex: auto;
+	-webkit-flex: auto;
+	-moz-flex: auto;
+	-ms-flex: auto;
+	padding-right: .5em;
+	max-width: calc(100% - 1.25em);
+	max-width: -webkit-calc(100% - 1.25em);
+	word-break: break-word;
+}
+
+.note-item-btn{
+	width: 1.25em;
+	height: 1.25em;
+	cursor: pointer;
+	background: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz48c3ZnIHZlcnNpb249IjEuMSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB4bWxuczp4bGluaz0iaHR0cDovL3d3dy53My5vcmcvMTk5OS94bGluayIgeD0iMHB4IiB5PSIwcHgiIHdpZHRoPSIyNCIgaGVpZ2h0PSIyNCIgdmlld0JveD0iMCAwIDI0IDI0IiB4bWw6c3BhY2U9InByZXNlcnZlIiBmaWxsPSIjZmZmIj48cGF0aCBkPSJNMTguMyw1LjcxTDE4LjMsNS43MWMtMC4zOS0wLjM5LTEuMDItMC4zOS0xLjQxLDBMMTIsMTAuNTlMNy4xMSw1LjdjLTAuMzktMC4zOS0xLjAyLTAuMzktMS40MSwwbDAsMCBjLTAuMzksMC4zOS0wLjM5LDEuMDIsMCwxLjQxTDEwLjU5LDEyTDUuNywxNi44OWMtMC4zOSwwLjM5LTAuMzksMS4wMiwwLDEuNDFoMGMwLjM5LDAuMzksMS4wMiwwLjM5LDEuNDEsMEwxMiwxMy40MWw0Ljg5LDQuODkgYzAuMzksMC4zOSwxLjAyLDAuMzksMS40MSwwbDAsMGMwLjM5LTAuMzksMC4zOS0xLjAyLDAtMS40MUwxMy40MSwxMmw0Ljg5LTQuODlDMTguNjgsNi43MywxOC42OCw2LjA5LDE4LjMsNS43MXoiLz48L3N2Zz4=) no-repeat 0 0 / contain;
+	transition: opacity .2s;
+	-webkit-transition: opacity .2s;
+	border: 0px;
+}
+
+.note-item-btn:hover{
+	opacity: .6;
+}
+
+/* Система взаимодействия */
+.CollaborationSystemMessage{
+	margin: 5px 5px 15px 5px;
+}
+
+.csm-date{
+	color: #aaaaaa;
+	font-size: smaller;
+}
+
+@keyframes shake{
+	10%, 90%{
+		transform: translate3d(-1px, 0, 0);
+		-webkit-transform: translate3d(-1px, 0, 0);
+		-ms-transform: translate3d(-1px, 0, 0);
+	}
+
+	20%, 80%{
+		transform: translate3d(2px, 0 0);
+		-webkit-transform: translate3d(2px, 0, 0);
+		-ms-transform: translate3d(2px,0, 0);    
+	}
+
+	30%, 50%, 70%{
+		transform: translate3d(-4px, 0, 0);
+		-webkit-transform: translate3d(-4px, 0, 0);
+		-ms-transform: translate3d(-4px, 0, 0);
+	}
+
+	40%, 60%{
+		transform: translate3d(4px, 0, 0);
+		-webkit-transform: translate3d(4px, 0, 0);
+		-ms-transform: translate3d(4px, 0, 0);
+	}
+}
+
+@-webkit-keyframes shake{
+	10%, 90%{
+		-webkit-transform: translate3d(-1px, 0, 0);
+	}
+
+	20%, 80%{
+		-webkit-transform: translate3d(2px, 0, 0);
+	}
+
+	30%, 50%, 70%{
+		-webkit-transform: translate3d(-4px, 0, 0)t;
+	}
+
+	40%, 60%{
+		-webkit-transform: translate3d(4px, 0, 0);
+	}
+}
+
+.listContainer-visible_controls{
+	position:relative;
+}
+.logo_container{
+	display:inline-block;
+}
+.mobile_menu-toggle,.auth-toggle{
+	display:none;
+	position:absolute;
+	top:50%;
+	transform:translateY(-50%);
+	color:#000;
+}
+.toggle i{
+	font-size:20px;
+	margin:0;
+}
+.mobile_menu-toggle{
+	left:0;
+}
+.auth-toggle{
+	right:0;
+}
+.lknav{
+	display: inline-block;
+	/* float: right; */ 
+}
+.listContainer-visible_controls,.listContainer-btns{
+	display: inline-flex;
+	margin-right:10px;
+}
+.listContainer-controls{
+	margin-bottom:10px;
+}
+.listContainer-controls .listContainer-btns i,.modal-close_btn,.filtersBtn{
+	display:none;
+}
+
+.listContainer-controls .listContainer-btns .filtersBtn{
+	display:none;
+}
+
+.input-group{
+	width:100%;
+	max-width: 1250px; 
+}
+
+.input-group-row{
+	display: table;
+	width:100%;
+}
+
+span.w215px{
+	width: 215px;
+}
+
+#messageBox{
+	width: 30%;
+}
+
+@media (max-width: 991px) {
+	#БлокСостояние{
+		width: 50%;
+		left: auto;
+	}	
+	#messageBox{
+		width: 94%;
+	}
+	button.adaptive-btn span{
+		display: none;
+	}
+	button.adaptive-btn i{
+		margin-right: 0px;
+	}
+	div.kd_logo{
+		position: absolute;
+		width: 162px;
+		height: 60px;
+		bottom: 15vh;
+		right: 10px;
+	}	
+	div.kd_logo img.kd_logo{
+		width: 70px;
+		height: 60px;
+	}	
+	#authForm center button{
+		white-space: initial;
+	}
+	#list_filters{
+		overflow:hidden;
+		margin-bottom: 10px;
+	}
+	#list_filters .btn{
+		margin-top: 10px;
+	}
+	#list_filters,div.listContainer table.table-main thead{
+		display:none;
+	}
+	#list_filters.active,div.listContainer table.table-main.active thead{
+		display:block;
+	}
+	.listContainer-controls .listContainer-btns .filtersBtn{
+		display:inline-block;
+	}	
+	.listContainer-visible_controls, .listContainer-btns {
+		margin-right: 0;
+	}
+	div.listContainer table.table-main{
+		display:block;
+		position: relative;
+		font-size: 12px;
+	}
+	.modal-body.listContainer{
+		 max-height: 160px!important;
+	}
+	div.listContainer table.table-main tbody tr,div.listContainer table.table-main thead tr{
+		display: -webkit-box;
+		display: -moz-box;
+		display: -webkit-flex;
+		display: -ms-flexbox;
+		display: flex;
+		-webkit-justify-content: flex-start;
+		justify-content: flex-start;
+		-webkit-align-content: stretch;
+		align-content: stretch;
+		-webkit-flex-wrap: wrap;
+		flex-wrap: wrap;
+		border: 1px solid #BDBDBD;
+		margin-bottom: 10px;
+		background-color: #fafafa;
+	}
+	div.listContainer table.table-main thead {
+		width: 100%;
+	}
+	.property:before{
+		display: inline-block;
+		font: normal normal normal 14px/1 FontAwesome;
+		font-size: inherit;
+		text-rendering: auto;
+		-webkit-font-smoothing: antialiased;
+		-moz-osx-font-smoothing: grayscale;
+		margin-right: 0.5em;
+	}
+	div.listContainer table.table-main thead th{
+		width:33.3333333%!important;
+	}
+	div.listContainer table.table-main .w-2pc,
+	div.listContainer table.table-main thead th.hide-th,.listContainer-controls .listContainer-btns button span,.listContainer-controls .listContainer-btns button.openBtn,.modalwin.objectform .modal-footer .saveBtn,
+	.connectedFilesBtn span,.listContainer-controls .listContainer-btns button.changeBtn,.listContainer-controls button.hide-btn,
+	div.listContainer table.table-main td.property-select,.modal-footer.hidden{
+		display:none!important;
+	}
+	.listContainer-controls{
+		margin-bottom:0px!important;
+		position:relative;
+	}
+	.modal-content .listContainer-controls{
+		margin-bottom:10px!important;
+	}
+	.listContainer-btns{
+		display: inline-block;
+		position: absolute;
+		top: 0;
+		left: 0;
+		z-index: 1;
+	}
+	.modal-content .simple .listContainer-btns{
+		position: static;
+	}
+	.listContainer-controls .listContainer-btns i{
+		display:block;
+		margin:0;
+	}
+	.listContainer-controls .listContainer-btns button {
+		padding: 8px;
+		line-height: 1;
+	}
+	.listContainer-controls .searchDiv {
+		width: 100%!important;
+		clear: both;
+		top: 0!important;
+		position: relative;
+		padding-left: 150px;
+	}
+	.listContainer-controls .listContainer-visible_controls.btns-1 .searchDiv {
+		padding-left: 40px;
+	}
+	.listContainer-controls .listContainer-visible_controls.btns-2 .searchDiv {
+		padding-left: 75px;
+	}
+	.listContainer-controls .listContainer-visible_controls.btns-3 .searchDiv {
+		padding-left: 110px;
+	}
+	.listContainer-controls .listContainer-visible_controls.btns-4 .searchDiv {
+		padding-left: 150px;
+	}
+	.logo_container{
+		position:relative;
+		display:block;
+		text-align:center;
+	}
+	.mobile_menu-toggle,.auth-toggle{
+		display:inline-block;
+	}
+	#auth{
+		height:initial;
+		margin-bottom: 0;
+	}
+	.menu,.lknav{
+		display:none;
+		width:100%;
+		float:none;
+	}
+	.menu.active,.lknav.active{
+		display:block;
+		margin-top: 20px;
+	}
+	div.contractor-select{
+		text-align:right;
+		margin-top:5px;
+	}
+	.fancy-hover{
+		display:block;
+		padding: 10px 5px;
+		font-size: 15px;
+	}
+	.modal-footer .btn{
+		margin-left: 0;
+		margin-right:10px;
+		margin-bottom:10px;
+	}
+	.modal-footer .btn + .btn{
+		margin-left: 0;
+		margin-right:10px;
+		margin-bottom:10px;
+	}
+	.modal-header{
+		position:relative;
+		padding-right: 40px!important;
+	}
+	.modal-close_btn{
+		display:inline-block;
+		position:absolute;
+		top:0;
+		right:0;
+		text-align:center;
+		width:50px;
+		font-size:20px;
+		color:#000;
+	}
+	.modal-close_btn {
+		display: inline-block;
+		position: absolute;
+		top: 0;
+		right: 0;
+		text-align: center;
+		width: 40px;
+		height: 50px;
+		font-size: 20px;
+		line-height: 55px;
+		color: #000!important;
+	}
+	.modal-close_btn i{
+		margin-right:0;
+	}
+	.modalwin.objectform .modal-content{
+		position:relative;
+		padding-bottom:60px;
+	}
+	.modalwin.objectform .modal-footer{
+		position:absolute;
+		bottom:0;
+		left:0;
+		z-index:1;
+		display:block;
+		width:100%;
+	}
+	.table-scroll_box{
+		overflow-x: scroll;
+	}
+	.table-scroll_box table{
+		width: 990px!important;
+	}
+	.table-scroll_box.auto table{
+		width: 100%!important;
+	}
+	.modal-body .input-group{
+		width:100%;
+	}
+}
+@media (max-width: 767px) {
+	#БлокСостояние{
+		width: 90%;
+		left: auto;
+	}	
+	#messageBox{
+		width: 94%;
+	}
+	span.w215px{
+		width: unset;
+	}	
+	div.kd_logo{
+		position: absolute;
+		width: 162px;
+		height: 60px;
+		bottom: 15vh;
+		right: 10px;
+	}	
+	div.kd_logo img.kd_logo{
+		width: 70px;
+		height: 60px;
+		bottom: 15vh;
+		right: 10px;
+	}
+	label.loginpage, a.fgtpass{
+    background-color: white;
+    border-radius: 10px;
+    padding: 3px 8px;
+    border-bottom: 0px;
+	}
+	div.listContainer table.table-main thead th{
+		width:33.3333333%!important;
+		font-size: 10px;
+	}
+	.modal-content .input-group .inputtitle{
+		display:block!important;
+	}
+	.input-group-row{
+		display: table-row;
+	}
+	.modal-content .listContainer-controls span.input-group-addon {
+		height: initial;
+		display: table-cell;
+		margin-top: 0;
+	}
+	.modal-content .nav > li,.modal-content .inputbox.fullwidth .inputtitle, .modal-content .inputbox.fullwidth .inputfield {
+		display: block!important;
+		width: 100%!important;
+	}
+	.modal-content .nav-tabs > li > a{
+		margin-right: 0;
+	}
+	.modal-content .nav-tabs > li.active > a,.modal-content .nav-tabs > li.active > a:hover,.modal-content .nav-tabs > li.active > a:focus {
+		color: #fff;
+		background-color: #555555;
+		border: 1px solid #555555;
+		border-bottom-color: #555555;
+	}
+	.modal-content .input-group-addon:last-child{
+		border-left: 1px solid #cccccc;
+	}
+	div.objectform label.title{
+		white-space: unset;
+	}		
+}
+
+img.captcharefresh{
+	height: 36px;
+	cursor: pointer;
+}

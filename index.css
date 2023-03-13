@@ -1,0 +1,349 @@
+#БлокСостояние{
+	display:none;
+}
+
+#mainpage {
+    margin: 0px 30px 0px 30px;
+}
+
+@media (max-width: 767px) {
+	.btn{
+		font-size:12px;
+		padding: 4px 8px;
+	}
+}
+
+/*HEADER*/
+#authform{
+	height: auto;
+}
+#auth{
+	height:auto;
+	padding:0;
+}
+.lk-auth{
+	float:none;
+	margin-right: 0;
+    height: 40px;
+	position:absolute;
+	top:25px;
+	margin-top: -20px;
+	right:15px;
+	z-index:1;
+}
+.lk-auth span,.lk-auth img{
+	display: inline-block;
+	vertical-align: middle;
+}
+.lk-user-login{
+	margin-top: 0;
+    float: none;
+    padding-left: 0;
+}
+.lk-user-login .lk-login-text{
+	white-space: nowrap;
+    overflow: hidden;
+    /*max-width: 100px;*/
+    text-overflow: ellipsis;
+}
+#ГлавноеМеню{
+	padding: 5px 215px 5px 15px;
+}
+#ГлавноеМеню,div.icon-filter{
+	text-align: center;
+}
+
+.lk-auth-bar{
+	display:none;
+	overflow:hidden;
+	padding:5px 10px;
+}
+.lk-auth-bar a{
+	display:inline-block;
+	color:#000;
+	text-decoration:none;
+}
+.lk-auth-bar a i{
+	font-size: 20px;
+}
+.lk-auth-bar a.lk-menu-toggle{
+	float:left;
+}
+.lk-auth-bar a.lk-auth-toggle{
+	float:right;
+}
+@media (max-width: 991px) {
+	#ГлавноеМеню{
+		text-align:left;
+	}
+	#КнопкаОбновитьСписокДесктоп{
+		display: none!important;
+	}
+}
+@media (max-width: 767px) {
+	.lk-auth img{
+		display:none;
+	}
+	.lk-auth-bar{
+		display:block;
+	}
+	.lk-auth,#ГлавноеМеню{
+		display:none;
+	}
+	.lk-auth.active,#ГлавноеМеню.active{
+		display:inline-block;
+	}
+	.lk-auth {
+		float: none;
+		height: auto;
+		position: static;
+		top: 0;
+		margin-top: 0px;
+		padding: 5px;
+		text-align: right;
+		right: initial;
+		width: 100%;
+	}
+	#ГлавноеМеню {
+		padding: 5px;
+		text-align:center;
+	}
+}
+/*HEADER*/
+/*HEADER SEARCH*/
+.input-group-block{
+	display: contents;
+}
+#ГруппаПоискаУслуги select.form-control{
+	width:auto;
+}
+@media (max-width: 767px) {
+	.input-group-block{
+		position: relative;
+		display: table;
+		border-collapse: separate;
+	}
+	.input-group-block + .input-group-block{
+		margin-top:10px;
+	}
+	#ГруппаПоискаУслуги select.form-control{
+		width:100%;
+	}
+	#ГруппаПоискаУслуги .input-group-btn:last-child > .btn{
+		margin-right:0!important;
+	}
+	#ГруппаПоискаУслуги .btn{
+		font-size:14px;
+		padding: 6px 12px;
+	}
+}
+/*HEADER SEARCH*/
+/*SERVICES*/
+@media (max-width: 767px) {
+	div.icon-service{
+		min-width: initial;
+		max-width: initial;
+		width:33.3333333%;
+		float: left;
+	}
+	div.icon-service:nth-child(3n+1){
+		clear:both;
+	}
+}
+@media (max-width: 479px) {
+	div.icon-service{
+		width:50%;
+	}
+	div.icon-service:nth-child(3n+1){
+		clear:none;
+	}
+	div.icon-service:nth-child(2n+1){
+		clear:both;
+	}
+}
+/*SERVICES*/
+/*REPORT FORM*/
+#ДополнительныеПоля .row{
+	margin-left:0;
+	margin-right:0;
+	display: table;
+    width: 100%;
+}
+@media (max-width: 767px) {
+	#МастерНовогоОбращенияПодвал .btn-text{
+		display:none;
+	}
+	#МастерНовогоОбращенияПодвал .fa{
+		line-height: 1.42857143;
+	}
+}
+@media (max-width: 479px) {
+	.new_report-btns .btn{
+		margin-right: 5px!important;
+		margin-bottom: 5px!important;
+	}
+}
+/*REPORT FORM*/
+
+/*MODAL FORM*/
+.modalwin {
+    top: 0;
+    padding: 0;
+    overflow: auto;
+    height: 100%;
+}
+.modal-body .input-group {
+	margin-bottom: 15px;
+}
+.modal-body .table-bordered > thead > tr > th{
+	white-space:nowrap;
+}
+@media (max-width: 767px) {
+	.modal-dialog{
+		 margin: 10px auto;
+		 width:95%!important;
+	}
+}
+/*MODAL FORM*/
+
+/*REPORT LIST*/
+#ListHeaderFormInner{
+	display:table;
+}
+.ListHeaderForm-btns{
+	display:none;
+}
+.ListHeaderForm-btns .btn{
+	margin-right:10px;
+}
+.inputfield-sep,.inputfield-row{
+	display: table-cell;
+	vertical-align: middle;
+}
+.modal-header-controls{
+	float:right;
+	display:inline-block;
+}
+.modal-title-link{
+	display:inline-block;
+	margin-left: 10px;
+}
+.comment_form-btns{
+	margin-top:15px;
+}
+@media (max-width: 991px) {
+	#mainpage {
+		margin: 0px 10px 0px 10px;
+	}
+
+	#ListHeaderFormInner{
+		display:none;
+	}
+	#ListHeaderFormInner:before,#ListHeaderFormInner:after,.modal-header-controls:before,.modal-header-controls:after{
+		content:'';
+		display:table;
+	}
+	#ListHeaderFormInner:after,.modal-header-controls:after{
+		clear:both;
+	}
+	.ListHeaderForm-btns,#ListHeaderFormInner.active,.modal-header-controls{
+		display:block;
+	}
+	.modal-header-controls{
+		float:none;
+		margin-bottom:10px;
+	}
+	#ListHeaderForm .inputfield-sep,#ListHeaderForm span.inputfield,#ListHeaderForm span.inputfield-row,#ListHeaderForm span.inputtitle{
+		display:inline-block;
+		float:left;
+	}
+	#ListHeaderForm .inputfield-sep,#ListHeaderForm span.inputfield,#ListHeaderForm span.inputtitle,div.listContainer table.table-main.active thead {
+		margin-top:10px;
+	}
+	div.listContainer table.table-main.active thead tr th:first-child{
+		display:none;
+	}
+	.modal-header {
+		padding-right: 15px!important;
+	}
+	
+	div.listContainer table.table-main td.property-status,div.listContainer table.table-main td.property-number,div.listContainer table.table-main td.property-worktime,
+	div.listContainer table.table-main td.property-subject,div.listContainer table.table-main td.property-phase,div.listContainer table.table-main td.property-initiator,div.listContainer table.table-main td.property-executor{
+		width:33.3333333%!important;
+	}
+	div.listContainer table.table-main td.property-status:before{
+		content:'\f251';
+	}
+	div.listContainer table.table-main td.property-number:before{
+		content:'\f292';
+	}
+	div.listContainer table.table-main td.property-worktime:before{
+		content:'\f017';
+	}
+	div.listContainer table.table-main td.property-subject:before{
+		content:'\f27b';
+	}
+	div.listContainer table.table-main td.property-phase:before{
+		content:'\f11d';
+	}
+	div.listContainer table.table-main td.property-initiator:before{
+		content:'\f234';
+	}
+	div.listContainer table.table-main td.property-executor:before{
+		content:'\f007';
+	}
+	div.listContainer table.table-main td.property-status img,.property:before{
+		vertical-align:middle;
+	}
+}
+@media (max-width: 767px) {
+	#ListHeaderForm span.inputfield:not(.inputfield-inline),#ListHeaderForm span.inputfield-row{
+		display:block;
+		width:100%!important;
+		padding-right:0!important;
+	}
+	.modal-header-controls .btn{
+		max-width: 98px;
+		text-overflow: ellipsis;
+		overflow-x: hidden;
+	}
+	.modal-header-controls .btn-text{
+		display: none;
+	}
+	.modal-header-controls .fa{
+		font-size: large;
+		vertical-align: text-top;
+		min-width: 13px;
+	}	
+	.modal-title,.modal-title-link {
+		font-size: 13px;
+		display:block;
+		float:none!important;
+	}
+	.modal-title-link{
+		margin-left:0;
+	}
+	.FileTransferFileList .FileTransferTable_FileName{
+		max-width: 100px;
+		overflow-x: hidden;
+		text-overflow: ellipsis;
+	}
+	#Обращение_Страница_Основное{
+		font-size:12px;
+	}
+	#Обращение_Страница_Основное .row [class*="col-"]{
+		padding-left:0;
+		padding-right:0;
+	}
+	
+	div.listContainer table.table-main td.property-status,div.listContainer table.table-main td.property-number,div.listContainer table.table-main td.property-worktime,
+	div.listContainer table.table-main td.property-subject,div.listContainer table.table-main td.property-phase,div.listContainer table.table-main td.property-initiator,div.listContainer table.table-main td.property-executor{
+		width:50%!important;
+	}	
+}
+/*REPORT LIST*/
+/*RESULT LIST*/
+#РезультатОтчета{
+	overflow-x: scroll;
+}
+/*RESULT LIST*/

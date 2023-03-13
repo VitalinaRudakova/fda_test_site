@@ -1,0 +1,338 @@
+html,body,div,span,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,abbr,address,cite,code,del,dfn,em,img,ins,kbd,q,samp,small,strong,sub,sup,var,b,i,dl,dt,dd,ol,ul,li,fieldset,form,label,legend,table,caption,tbody,tfoot,thead,tr,th,td,time,mark,audio,video
+{
+	background: transparent;
+	border: 0;
+	font-size: 100%;
+	margin: 0;
+	outline: 0;
+	padding: 0;
+	vertical-align: baseline;
+}
+
+body, html {
+    height: 100%;
+}
+
+body {
+	margin:0 auto;
+	padding:0;
+	width:100%;
+	height:100%;
+	-webkit-font-smoothing: antialiased;
+	text-rendering: optimizeSpeed;
+}
+
+.cover { 
+  background-image: url(assets/images/back_cover.png); 
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  position: relative;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  height:100vh;
+
+}
+
+.clear {
+	float: none;
+	clear: both;
+}
+
+.kd_main {
+	display: inline-block;
+	box-sizing: border-box;
+	width: 100%;
+	margin: 0 auto;
+	padding: 10% 20%;
+	text-align: center;
+	
+}
+
+.kd_main .l_cont {
+	display:inline-block;
+	box-sizing: border-box;
+	width:45%;
+	float:left;
+	text-align: right;
+	padding: 0 2.5%;
+	height:auto;
+}
+
+.kd_main .l_cont .maincnt {
+	display:block;
+	box-sizing: border-box;
+	overflow: hidden;
+	width:auto;
+	margin:25px auto;
+	text-align:left;
+}
+
+.kd_main .l_cont h1 {
+	display: inline-block;
+	font-size:2.750em;
+	color:#555555;
+	line-height: 46px;
+	font-weight: 200;
+	padding: 0;
+	margin-top:20px; 
+}
+
+.kd_main .l_cont .reg {
+	display: inline-block;
+    font-size: 1.125em;
+    text-decoration: none;
+    color: #fff;
+    border-bottom: 1px solid #fff;
+    font-weight: 200;
+    margin: 20px 0;
+}
+
+.kd_main .r_cont {
+	display:inline-block;
+	box-sizing: border-box;
+	width:55%;
+	float:left;
+	height:auto;
+	padding: 10px 2.5%;
+}
+
+.kd_main .auth_form {
+	display:block;
+	box-sizing: border-box;
+	width:100%;
+	height:auto;
+	margin:0 auto;
+	text-align:left;
+}
+
+.authlk .authlk-content {
+    display: inline-block;
+    position: relative;
+	text-align: center;
+}
+
+.auth_form .authlk {
+	display:block;
+	box-sizing: border-box;
+    width: 100%;
+    padding: 0 5%;
+    margin: 0 auto;
+}
+
+
+.auth_form .authlk form p {
+    clear: both;
+    margin-top: 10px;
+}
+
+.auth_form .authlk p label {
+    display: inline-block;
+    font-size: 1.25em;
+  	text-align: left;
+    height: 30px;
+    color:#196bff;
+    margin-right: 10px;
+}
+
+.authlk form p input {
+
+    border: 1px #b5b5b5 solid;
+    background: #fff;
+    color: #000;
+    font-size: 1.5em;
+    font-weight: 200;
+    width: 280px;
+    max-width: 280px;
+    outline: none;
+	padding: 8px 15px;
+    /*height: 30px;*/
+    border-radius: 0;
+    -webkit-appearance: none;
+    margin-bottom: 10px;
+}
+
+.auth_form .authlk p .captcha {
+  display: block;
+  background: url(assets/images/captcha.png) no-repeat;
+  background-position: right;
+  height: 28px;
+  line-height: 28px;
+  padding-left: 0px;
+}
+
+.authlk form input.submit {
+    background: #196bff;
+    width: auto;
+    height: 60px;
+    margin: 10px 0;
+    border: none;
+    color: #fff;
+    font-weight: 600;
+    letter-spacing: 1px;
+    padding: 5px 10px;
+    border-radius: 0;
+    -webkit-appearance: none;
+    text-transform: uppercase;
+}
+
+.l_cont img {
+    height: 250px;
+}
+
+@media only screen and (max-device-width: 667px) 
+    and (-webkit-device-pixel-ratio: 2) {
+.kd_main {padding: 5%;}
+.authlk form p input {
+	margin-bottom: 5px;
+}
+}
+
+@media only screen and 
+(min-device-width : 360px) and 
+(max-device-width : 640px) and 
+(-webkit-min-device-pixel-ratio : 3) { 
+
+.kd_main {padding: 2%;}
+.kd_main .l_cont h1 { font-size:2.250em;}
+.auth_form .authlk p label {font-size:1em; }
+.authlk form p input {font-size:1em; width:250px;}
+.auth_form .authlk form p {margin-top: 5px;}
+.authlk form input.submit {width: 65px;height: 45px;font-size: 0.9em;line-height: 2em;}
+.auth_form .authlk .fgtpass {font-size: 1em;}
+} 
+
+@media screen and (max-width:1024px) {
+	.kd_main .l_cont h1 { font-size:1.650em;line-height: 32px; }
+}
+
+@media screen and (max-width:600px) {
+
+.kd_main .l_cont { 
+	float: none;
+	width: 100%;
+	padding:1%;
+	text-align: left;
+}
+
+.kd_main .l_cont h1 { font-size:2.750em;line-height: 32px; }
+
+.kd_main .r_cont { 
+	float: none;
+	width: 100%;
+	padding:1%;
+}
+
+.auth_form .authlk {
+	padding: 0;
+}
+
+.authlk form p input {
+	margin-bottom: 0;
+}
+
+}
+
+@media screen and (max-width:600px) {
+.kd_main {padding: 5%;}
+.kd_main .l_cont h1 { font-size:2.250em; }
+.auth_form .authlk p label {font-size:1em; }
+.authlk form p input {font-size:1em; width:250px;}
+.auth_form .authlk form p {margin-top: 5px;}
+
+}
+
+.inlinedatablock{
+	float: left;
+	margin-top: 8px;
+}
+
+.inlinedatainput{
+	display: unset;
+	width: unset;
+	padding: 6px;
+}
+	
+.inlinedatainputgroup{
+	float: left;
+	padding-left: 15px;	
+}
+
+.lk-auth{
+	height: 40px;
+	/*border-bottom: 2px solid #7ad27a;
+	background: #93c5ea;*/
+}
+
+.lk-menu{
+	padding-top: 9px;
+    padding-bottom: 9px;	
+	margin: 0px;
+	font-size: 18px;
+	/*font-weight: 600;
+	border-bottom: 1px solid #4682dc;*/
+}
+
+.lk-user-login{
+	margin-top: 10px;
+	float: right;
+	/*padding-right: 50px;*/
+}
+
+.lk-logout-text{
+	cursor: pointer;
+	padding-left: 25px;
+}
+
+.lk-logout-text:hover{
+	text-decoration: underline;
+}
+
+.inlinedatablock{
+	float: left;
+	margin-top: 8px;
+}
+
+.inlinedatalabel{
+	float: left;
+	margin-right: 8px;
+	padding-top: 6px;
+	height: 34px;	
+}
+
+.inlinedatainput{
+	display: unset;
+	width: unset;
+	padding: 6px;
+}
+	
+.inlinedatainputgroup{
+	float: left;
+	padding-left: 15px;	
+}
+
+#authform{
+    position: relative;
+	display: inline-table;
+    width: 100%;
+    background: white;	
+	z-index: 1;
+    height: 38px;	
+	padding: 5px;
+}
+
+#authdropdown{
+    background: #eeeeee;
+    width: 300px;
+    margin: 1px 15px;
+    padding: 10px;
+    border: solid 1px #cccccc;
+    border-radius: 6px;
+	line-height: 3;
+}
+
+#auth{
+	padding: 5px 0px;
+	height: 30px;
+}

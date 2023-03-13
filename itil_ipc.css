@@ -1,0 +1,483 @@
+﻿/*
+	(с) Юрий Лазаренко, Севастополь
+	e-mail lazarenkoyv@mail.ru
+	v-can.Site Личный кабинет инициатора
+	v 3.0.3.7
+	05.02.2022
+*/
+
+
+/*
+#authForm{
+	height: 80px;
+}
+*/
+
+@media screen and (max-width:1024px) {
+	span.lk-user-login{
+		display: none;
+	}
+}
+
+@media screen and (max-width:1200px) {
+	div.actionbuttons{
+		margin-top: 15px;
+	}
+}
+
+img.lk-logo{
+	height: 40px;
+	filter: brightness(0) invert(1);
+}
+
+.container{
+	padding: 0px;
+	/*margin: 30px;*/
+}
+
+div.icon-service{
+	text-align: center;
+	max-width: 150px;
+	/*border-radius: 10px;*/
+}
+
+div.icon-service.selected{
+    border-bottom: 3px solid #66b2e8;
+}
+
+div.icon-filter{
+	min-height: 40px;
+	min-width: 100px;
+	background: #fff;
+	color: #555555;
+	padding: 0px 40px;
+    display: inline-block;
+    vertical-align: middle;	
+	font-size: 75%;
+	cursor: pointer;	
+    border-bottom: 3px solid #fff;	
+	/*border-radius: 5px;*/
+}
+
+div.icon-filter:hover{
+    border-bottom: 3px solid #cccccc;	
+	border-radius: 0px;
+}
+
+img.icon-filter-img{
+    vertical-align: middle;	
+}
+
+div.icon-filter span{
+	margin-left: 100px;
+}
+
+div.icon-filter i{
+	color: #000000;
+	font-size: 33px;
+	vertical-align: middle;
+}
+
+div.icon-service{
+	min-height: 60px;
+	min-width: 150px;
+	background: transparent;
+	color: #555555;
+	border-top: 1px solid #ffffff;
+	border-left: 1px solid #ffffff;
+	border-right: 1px solid #ffffff;
+	border-top-left-radius: 6px;
+	border-top-right-radius: 6px;
+	padding: 10px 25px;
+    display: inline-block;
+    vertical-align: middle;	
+	font-size: 75%;
+	cursor: pointer;	
+	margin-bottom: -1px;
+	transition: background 0.3s ease;
+	/*transition: border-color 0s ease-out 0.5s, width 0.25s ease-out 0.5s, height 0.25s ease-out 0.75s;*/
+}
+
+div.icon-service.act{
+	background: #eeeeee;
+	border-top: 1px solid #dddddd;
+	border-left: 1px solid #dddddd;
+	border-right: 1px solid #dddddd;
+	font-weight: 600;
+	box-shadow: -3px 8px 7px rgba(255, 255, 255, 0.5);
+}
+
+div.icon-service.item{
+	border-bottom: 1px solid #dddddd;
+}
+
+div.icon-service:hover{
+	background: #eeeeee;
+}
+
+div.icon-service-side {
+	min-height: 60px;
+	min-width: 60px;
+	background: transparent;
+	color: #555555;
+	border-top: 1px solid #ffffff;
+	border-left: 1px solid #ffffff;
+	border-right: 1px solid #ffffff;
+	border-radius: 6px;
+	padding: 10px 25px;
+    display: inline-block;
+    vertical-align: middle;	
+	font-size: 75%;
+	cursor: pointer;	
+	margin-bottom: -1px;
+	transition: background 0.3s ease;
+	text-align: center;
+	/*transition: border-color 0s ease-out 0.5s, width 0.25s ease-out 0.5s, height 0.25s ease-out 0.75s;*/
+}
+
+div.icon-service-side:hover{
+	background: #eeeeee;
+}
+
+div.glider-contain.act div.icon-service{
+	background: #eeeeee;
+}
+
+div.glider-contain.act div.icon-service.act{
+	background: #f9f9f9;
+}
+
+div.selected:hover{
+    border-bottom: 3px solid #66b2e8;
+    /*border-bottom: 3px solid white;*/
+}
+
+div.selected{
+    border-bottom: 3px solid #66b2e8;
+    /*filter: drop-shadow(-2px 2px 2px gray);*/
+}
+
+.lk-header{
+	width: 25%;
+}
+
+.lk-auth{
+	/*height: 40px;*/
+	background: #ffffff;
+}
+
+.lk-user-login{
+	margin-top: 10px;
+	/*float: left;*/
+	padding-left: 50px;
+}
+
+.lk-login-text{
+    background: #F5F5F7;
+    border-radius: 4px;
+    padding: 8px;
+	/*margin-right: 10px;*/
+    color: #333333;
+}
+
+.lk-logout-text{
+	cursor: pointer;
+	padding-left: 5px;
+}
+
+.lk-logout-text:hover{
+	text-decoration: underline;
+}
+
+button.round{
+	border-radius: 15px;
+}
+
+div.group-header{
+	font-weight: 600;
+}
+
+img.close{
+	opacity: 0.3;
+    -webkit-transition: opacity .1s ease-out;
+    transition: opacity .1s ease-out;
+}
+
+img.close:hover{
+	opacity: 0.8;
+}
+
+button.ratetask{
+	width: 40px;
+	border-radius: 15px;
+}
+button.ratetask.selected{
+	border-width: 0;
+}
+
+img.serviceicon{
+	width: 40px;	
+	height: 40px;	
+	margin-bottom: 5px;
+}
+
+img.serviceiconfolder{
+	position: relative;
+	top: 19px;
+	left: 15px;
+	width: 40px;
+}
+
+img.serviceiconfolderopened{
+	position: relative;
+	top: 9px;
+	left: 15px;
+	width: 42px;
+}
+
+div.icon-service-folder{
+	height: 0px;
+}
+
+#processing{
+    border: #a0c7f9 1px solid;
+    position: absolute;
+    /*margin-top: 30vh;*/
+    margin-left: 45vw;
+	text-align: center;
+	background: white;
+	background: white;
+    padding: 5px 40px;
+    border-radius: 6px;
+	color: #4682ee;
+	display: none;
+	z-index: 100;
+}
+
+span.input-addon-btn{
+	cursor: pointer;
+	width: 28px;
+}
+
+td.worktime{
+	cursor: pointer;
+}
+
+td.worktime:active{
+	color: #154a78;
+}
+
+span.worktime:active{
+	color: #154a78;
+}
+
+span.worktimeact{
+    font-weight: 700;
+    color: #337ab7;
+    animation: worktimeact 5s ease-out;
+    animation-iteration-count: infinite; 
+    opacity: 0.5;
+}
+
+@keyframes worktimeact {
+    0% { 
+        opacity: 0.5;
+    }
+    30% { 
+        opacity: 1.0;
+    }
+    80% { 
+        opacity: 1.0;
+    }
+    100% { 
+        opacity: 0.5;
+    }
+}
+
+#mainpage{
+	font-size: 90%;
+	/*margin: 0px 45px 0px 30px;*/
+}
+
+#МастерНовогоОбращенияПодвал{
+    margin-top: 10px;
+    margin-bottom: 30px;	
+}
+
+.openMenu {
+    background: #2ca060;
+    /*border: 2px solid #d51920;*/
+    border-radius: 0;
+    cursor: pointer;
+    display: none;
+    height: 36px;
+    /*padding-left: 9.5px;
+    padding-top: 13.5px;*/
+    position: relative;
+    transition: all .4s ease;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    width: 36px;
+    margin: 0 10px 0 0;
+    box-sizing: border-box;
+	top: 5px;
+	left: 5px;
+    /* z-index: 12; */
+}
+
+.b-bun {
+	background: #fff;
+	position: relative;
+	height: 2px;
+	width: 25px;
+	left: 6px;
+}
+
+.b-bun--top {
+	top: 8px;
+}
+.b-bun--mid {
+    top: 15px;
+}
+.b-bun--bottom {
+    top: 22px;
+}
+
+.overlay {
+    height: 100%;
+    width: 0;
+    position: fixed;
+    z-index: 10;
+    top: 0;
+    left: 0;
+    background-color: white;
+    overflow-x: hidden;
+    transition: 0.3s;
+}
+
+.overlay-content {
+    position: relative;
+    display: inline-block;
+    box-sizing: border-box;
+    top: 0;
+    width: 100%;
+    text-align: left;
+    margin-top: 0;
+    padding: 30px;
+}
+
+.overlay form {
+	box-sizing: border-box;
+    display: block;
+    position: relative;
+    width: 100%;
+    padding: 0;
+    margin-bottom: 20px;
+}
+
+.overlay .cls {
+    padding: 8px;
+    text-decoration: none;
+    font-size: 36px;
+    color: #fff;
+    display: block;
+    transition: 0.3s;
+}
+
+/*.overlay a:hover, .overlay a:focus {
+    color: #f1f1f1;
+} */
+
+.overlay .closebtn {
+	color: #333333;
+    position: absolute;
+    /*font-family: 'Circe';*/
+    top: 0px;
+    right: 5px;
+    font-size: 30px;
+    line-height: 35px;
+    z-index: 2;
+    text-decoration: none;
+    display: block;
+    padding: 8px;
+}
+
+.modal-dialog{
+	width: 90%;
+}
+
+.taskform-row{
+	 padding-bottom: 12px;
+}
+
+.taskform-label{
+	 color: #555555;
+}
+
+.taskform-value{
+	 font-weight: 600;
+}
+
+@media (max-width: 991px) {
+	div.listContainer table.table-main td.property-date{
+		width:33.3333333%!important;
+	}
+	/*div.listContainer table.table-main td.property-date:before{
+		content:'\f073';
+	}*/
+
+	div.icon-filter{
+		min-width: 60px;
+		padding: 10px;
+		display: inline-block;
+	    margin-bottom: 10px;
+		text-align: left;
+	}	
+	.openMenu {display: inline-block;}
+	#ГлавноеМенюКнопки {display: none;}
+	#МастерНовогоОбращенияПодвал{
+		margin-top: 30px;
+		margin-bottom: 30px;	
+		margin-left: -15px;	
+	}	
+	.taskform-row{
+		 padding-bottom: 8px;
+	}	
+	span.menu-divider {display: block;}
+	/*.modalwin { 
+		top: 20%;
+		right: 0;
+		left: 0;
+		margin: -10px 10px 0px -10px;
+		z-index: 102;
+		display: none;
+		position: fixed;
+		padding: 0px;
+	}*/	
+	.modal-dialog{
+		width: 100%;
+	}
+}
+
+@media (max-width: 767px) {
+	div.listContainer table.table-main td.property-date{
+		width:50%!important;
+	}	
+	div.icon-filter{
+		min-width: 45px;
+		padding: 0px;
+	}	
+	.openMenu {display: inline-block;}
+	#ГлавноеМенюКнопки {display: none;}
+	span.menu-divider {display: block;}
+}
+
+span.inputfield{
+	font-weight: 700;
+}
+
+.reportname{
+	font-size: large;
+}

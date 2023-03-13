@@ -1,0 +1,486 @@
+﻿
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<meta name="robots" content="index, follow" />
+		<meta name="keywords" content="" />
+		<meta name="description" content="" />	
+		<link rel="shortcut icon" type="assets/image/x-icon" href="assets/images/userpics/short_logo.png">
+		<title>Личный кабинет инициатора для СУИТ</title>
+
+
+		<link rel="stylesheet" href="assets/fonts/stylesheet.css">
+		<link rel="stylesheet" href="assets/css/bootstrap.css">
+		<link rel="stylesheet" href="assets/css/custom-bootstrap.css">
+		<link rel="stylesheet" href="assets/css/daterangepicker.css" />
+		<link rel="stylesheet" href="assets/css/owl.carousel.min.css">
+		<link rel="stylesheet" href="assets/css/jquery.fancybox.css">
+		<link rel="stylesheet" href="assets/css/jquery.arcticmodal.css">
+		<link rel="stylesheet" href="assets/css/style.css?v=1.0">
+
+	</head>
+
+                
+                <svg width="0" height="0" class="d-none">
+			<symbol xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" id="agreed">
+				<path fill-rule="evenodd" clip-rule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm2 0c0 5.523-4.477 10-10 10S0 15.523 0 10 4.477 0 10 0s10 4.477 10 10zM9.49 12.698l4.87-5-1.433-1.396-4.154 4.265-1.557-1.598-1.432 1.395 2.272 2.334.717.735.716-.735z"></path>
+			</symbol>
+			<symbol xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 12" id="arrow-left">
+				<path fill-rule="evenodd" clip-rule="evenodd" d="M15.5 7H3.914l3.293 3.293-1.414 1.414L.086 6 5.793.293l1.414 1.414L3.914 5H15.5v2z"></path>
+			</symbol>
+			<symbol xmlns="http://www.w3.org/2000/svg" viewBox="0 0 13 13" id="arrow-top-right">
+				<path fill-rule="evenodd" clip-rule="evenodd" d="M12.39 8.121V0H4.267v2h4.707L0 10.975l1.414 1.414 8.975-8.975v4.707h2z"></path>
+			</symbol>
+			<symbol xmlns="http://www.w3.org/2000/svg" viewBox="0 0 21 19" id="attach">
+				<path fill-rule="evenodd" clip-rule="evenodd" d="M18.89 9.667a5.5 5.5 0 10-7.78-7.778l-9.545 9.546a4 4 0 005.657 5.657l7.424-7.425a2.5 2.5 0 10-3.535-3.535L7.929 9.314l1.414 1.414 3.182-3.182a.5.5 0 11.707.707l-7.424 7.425a2 2 0 01-2.829-2.829l9.546-9.546a3.5 3.5 0 014.95 4.95l-6.718 6.718 1.415 1.414 6.717-6.718z"></path>
+			</symbol>
+			<symbol xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 18" id="calendar">
+				<path d="M6 0H4v2H2a2 2 0 00-2 2v12a2 2 0 002 2h7.4a7.528 7.528 0 01-1.535-2H2V4h16v1.865a7.528 7.528 0 012 1.536V4a2 2 0 00-2-2h-2V0h-2v2H6V0z"></path>
+				<path d="M16.8 11.6L15 14h-3v-2h2l1.2-1.6 1.6 1.2z"></path>
+				<path fill-rule="evenodd" clip-rule="evenodd" d="M14.5 18a5.5 5.5 0 100-11 5.5 5.5 0 000 11zm0-2a3.5 3.5 0 100-7 3.5 3.5 0 000 7z"></path>
+			</symbol>
+			<symbol xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" id="chat">
+				<path fill-rule="evenodd" clip-rule="evenodd" d="M4 11.889L2 13v-3H1a1 1 0 01-1-1V1a1 1 0 011-1h12a1 1 0 011 1v6h5a1 1 0 011 1v8a1 1 0 01-1 1h-1v3l-2-1.111L12.6 17H7a1 1 0 01-1-1v-5.222l-2 1.11zm2-3.4V8a1 1 0 011-1h5V2H2v6h2v1.601L6 8.49zm10 8.112V15h2V9H8v6h5.118l.453.252L16 16.6z"></path>
+			</symbol>
+			<symbol xmlns="http://www.w3.org/2000/svg" viewBox="0 0 11 9" id="check">
+				<path fill-rule="evenodd" clip-rule="evenodd" d="M10.707 2.207L4 8.914.293 5.207l1.414-1.414L4 6.086 9.293.793l1.414 1.414z"></path>
+			</symbol>
+			<symbol xmlns="http://www.w3.org/2000/svg" viewBox="0 0 11 12" id="circle">
+				<path fill-rule="evenodd" clip-rule="evenodd" d="M5.5 9.5a3.5 3.5 0 100-7 3.5 3.5 0 000 7zm0 2a5.5 5.5 0 100-11 5.5 5.5 0 000 11z"></path>
+			</symbol>
+			<symbol xmlns="http://www.w3.org/2000/svg" viewBox="0 0 14 13" id="close">
+				<path fill-rule="evenodd" clip-rule="evenodd" d="M7.092 5.086L2.142.136.728 1.55l4.95 4.95-4.95 4.95 1.414 1.414 4.95-4.95 4.95 4.95 1.414-1.414-4.95-4.95 4.95-4.95L12.042.136l-4.95 4.95z"></path>
+			</symbol>
+			<symbol xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" id="closed-requests">
+				<path fill-rule="evenodd" clip-rule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm2 0c0 5.523-4.477 10-10 10S0 15.523 0 10 4.477 0 10 0s10 4.477 10 10zM9.338 13.254l6.319-5.5-1.314-1.508-5.638 4.908L6.682 9.27l-1.364 1.463L8 13.232l.659.614.68-.592z"></path>
+			</symbol>
+			<symbol xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" id="create-request">
+				<path fill-rule="evenodd" clip-rule="evenodd" d="M15 2H5a3 3 0 00-3 3v10a3 3 0 003 3h5v2H5a5 5 0 01-5-5V5a5 5 0 015-5h10a5 5 0 015 5v5h-2V5a3 3 0 00-3-3zm0 10h2v3h3v2h-3v3h-2v-3h-3v-2h3v-3z"></path>
+			</symbol>
+			<symbol xmlns="http://www.w3.org/2000/svg" viewBox="0 0 18 3" id="ellipsis">
+				<path fill-rule="evenodd" clip-rule="evenodd" d="M3.5 1.5a1.5 1.5 0 11-3 0 1.5 1.5 0 013 0zm7 0a1.5 1.5 0 11-3 0 1.5 1.5 0 013 0zM16 3a1.5 1.5 0 100-3 1.5 1.5 0 000 3z"></path>
+			</symbol>
+			<symbol xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 18" id="exit">
+				<path fill-rule="evenodd" clip-rule="evenodd" d="M2 2H10H11H13V0H11H2H0V2V16V18H2H11H13V16H11H10H2V2ZM12.2255 5L16 9L12.2255 13L11 11.7013L12.6055 10H6V8H12.6055L11 6.2987L12.2255 5Z"/>
+			</symbol>
+			<symbol xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 17" id="file">
+				<path fill-rule="evenodd" clip-rule="evenodd" d="M2 .5h4.556L7 .944 11.556 5.5l.444.444V16.5H0V.5h2zm8 7H5v-5H2v12h8v-7zm-1.273-2H7V3.773L8.727 5.5z"></path>
+			</symbol>
+			<symbol xmlns="http://www.w3.org/2000/svg" viewBox="0 0 17 20" id="filter">
+				<path fill-rule="evenodd" clip-rule="evenodd" d="M15 3a1 1 0 11-2 0 1 1 0 012 0zm2 0a3 3 0 01-5.83 1H0V2h11.17A3.001 3.001 0 0117 3zM5 10a1 1 0 11-2 0 1 1 0 012 0zm1.83 1a3.001 3.001 0 110-2H17v2H6.83zM14 18a1 1 0 100-2 1 1 0 000 2zm0 2a3 3 0 10-2.83-4H0v2h11.17A3.001 3.001 0 0014 20z"></path>
+			</symbol>
+			<symbol xmlns="http://www.w3.org/2000/svg" viewBox="0 0 18 15" id="folder">
+				<path fill-rule="evenodd" clip-rule="evenodd" d="M8.172 5l-3-3H2v11h14V5H8.172zM6 0l3 3h9v12H0V0h6z"></path>
+			</symbol>
+			<symbol xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" id="for-approval">
+				<path fill-rule="evenodd" clip-rule="evenodd" d="M5 2h10a3 3 0 013 3v5h2V5a5 5 0 00-5-5H5a5 5 0 00-5 5v10a5 5 0 005 5h5v-2H5a3 3 0 01-3-3V5a3 3 0 013-3zm14.707 10.793a1 1 0 010 1.414l-5 5-.69.69-.707-.673-3-2.857a1 1 0 011.38-1.448l2.293 2.184 4.31-4.31a1 1 0 011.414 0zM15 5H5v2h10V5zM5 11h10V9H5v2zm3 4H5v-2h3v2z"></path>
+			</symbol>
+			<symbol xmlns="http://www.w3.org/2000/svg" viewBox="0 0 14 15" id="graph">
+				<path fill-rule="evenodd" clip-rule="evenodd" d="M14 0v15h-2V0h2zM8 8v7H6V8h2zm-6 7V4H0v11h2z"></path>
+			</symbol>
+			<symbol xmlns="http://www.w3.org/2000/svg" viewBox="0 0 29 18" id="hscroll">
+				<path fill-rule="evenodd" clip-rule="evenodd" d="M.354 2.5l2.5-2.5.707.707-1.647 1.647h8.793v1H1.914L3.561 5l-.707.707-2.5-2.5L0 2.854.354 2.5zM26.06 0l2.5 2.5.353.354-.353.353-2.5 2.5L25.354 5 27 3.354h-8.293v-1H27L25.354.707 26.06 0zM13.967 2.19c-.131.2-.176.468-.176.664v6.5l-.964.185c-.14-.35-.5-.925-.94-1.413a3.672 3.672 0 00-.645-.584c-.215-.145-.366-.188-.451-.188-.259 0-.383.071-.449.132a.61.61 0 00-.164.34 1.644 1.644 0 00.06.804l.925 1.85 1.575 3.15c.576 1.151 1.161 1.843 1.636 2.24.49.41.829.484.917.484h4.499c.16 0 .361-.069.592-.235.228-.164.456-.402.66-.684.204-.28.374-.589.49-.878.12-.297.173-.542.173-.703v-4.5c0-.47-.18-.805-.483-1.068a2.354 2.354 0 00-.516-.33v2.398h-1V7.62a9.067 9.067 0 00-1-.166v1.899h-1V7.379a26.098 26.098 0 00-1-.024v.999h-1v-5.5c0-.17-.056-.437-.207-.646-.132-.184-.357-.354-.794-.354-.433 0-.628.166-.739.335zm6.11 4.491c-1.114-.279-2.402-.32-3.37-.326V2.854c0-.33-.096-.814-.395-1.23-.318-.441-.843-.77-1.606-.77-.766 0-1.279.333-1.576.789-.276.423-.339.906-.339 1.21v4.788a6.858 6.858 0 00-.16-.184 4.66 4.66 0 00-.83-.745c-.289-.194-.638-.358-1.01-.358-.463 0-.845.136-1.128.398a1.601 1.601 0 00-.466.88c-.059.296-.05.593-.019.834.03.23.089.458.165.611l.925 1.85 1.575 3.15c.625 1.249 1.289 2.058 1.89 2.56.585.49 1.146.717 1.558.717h4.499c.44 0 .84-.182 1.175-.422.337-.243.638-.566.887-.91.25-.344.46-.724.608-1.09.146-.36.245-.74.245-1.078v-4.5c0-.78-.32-1.384-.829-1.824-.49-.424-1.139-.684-1.8-.849z"></path>
+			</symbol>
+			<symbol xmlns="http://www.w3.org/2000/svg" viewBox="0 0 21 20" id="like">
+				<path fill-rule="evenodd" clip-rule="evenodd" d="M11.5 0h-.78l-.19.757c-.156.626-.676 2.416-1.458 4.372-.306.763-.982 1.505-1.8 2.146a10.7 10.7 0 01-2.043 1.251A1.002 1.002 0 005 8.5H1a1 1 0 00-1 1v7a1 1 0 001 1h4a.995.995 0 00.5-.134v.134h2c.007 0 .05.003.124.02.082.018.19.05.315.102.248.104.553.284.854.585C9.853 19.267 11.36 19.5 12 19.5h3.5c2.27 0 3.253-1.89 3.47-2.758l.006-.023.005-.023c.168-.842.603-3.12 1.005-5.532.253-1.516-.222-2.638-1.078-3.338C18.128 7.187 17.153 7 16.5 7h-2.466c.12-.302.239-.624.35-.955C14.707 5.094 15 3.968 15 3c0-1.23-.675-2.027-1.438-2.467C12.848.123 12.038 0 11.5 0zM6 15.5h1.5c.604 0 1.723.31 2.707 1.293.256.256.601.438.964.556.365.118.686.151.829.151h3.5c.49 0 .824-.193 1.07-.446.258-.266.404-.59.455-.778.169-.846.595-3.079.989-5.44.147-.884-.128-1.262-.372-1.462C17.322 9.113 16.847 9 16.5 9h-5.618l.724-1.447c.23-.463.588-1.27.884-2.148.304-.899.51-1.773.51-2.405 0-.37-.158-.573-.437-.733a1.796 1.796 0 00-.335-.147 43.467 43.467 0 01-1.3 3.751c-.494 1.237-1.485 2.245-2.424 2.98A12.63 12.63 0 016 10.372V15.5zm-4 0v-5h2v5H2z"></path>
+			</symbol>
+			<symbol xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 16" id="link">
+				<path fill-rule="evenodd" clip-rule="evenodd" d="M13.262 9.639l4.137-4.138a2.051 2.051 0 00-2.9-2.9l-1.716 1.715c-.22.22-.555.278-.852.182-.656-.212-1.019-1.14-.531-1.627l1.685-1.684a4.051 4.051 0 015.729 5.729l-4.138 4.137a4.051 4.051 0 01-6.704-1.569c-.18-.537.043-1.107.444-1.508.543-.543 1.206.271 1.494.983a2.051 2.051 0 003.352.68zm-6.524-3.34l-4.137 4.138a2.051 2.051 0 002.9 2.9l1.716-1.715c.22-.22.555-.278.852-.182.656.212 1.02 1.139.531 1.627L6.916 14.75a4.051 4.051 0 01-5.73-5.729l4.138-4.137a4.051 4.051 0 016.704 1.57c.18.536-.043 1.106-.444 1.507-.543.543-1.206-.271-1.494-.983a2.051 2.051 0 00-3.352-.68z"></path>
+			</symbol>
+			<symbol xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 15" id="list">
+				<path fill-rule="evenodd" clip-rule="evenodd" d="M1 2.043a1 1 0 100-2 1 1 0 000 2zm0 6a1 1 0 100-2 1 1 0 000 2zm1 5a1 1 0 11-2 0 1 1 0 012 0zm14-13H4v2h12v-2zm-12 6h12v2H4v-2zm12 6H4v2h12v-2z"></path>
+			</symbol>
+			<symbol xmlns="http://www.w3.org/2000/svg" viewBox="0 0 19 20" id="list-border">
+				<path fill-rule="evenodd" clip-rule="evenodd" d="M2 2h15v16H2V2zM0 0h19v20H0V0zm6 6a1 1 0 11-2 0 1 1 0 012 0zm0 4a1 1 0 11-2 0 1 1 0 012 0zm-1 5a1 1 0 100-2 1 1 0 000 2zM8 5h7v2H8V5zm7 4H8v2h7V9zm-7 4h7v2H8v-2z"></path>
+			</symbol>
+			<symbol xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" id="list-requests">
+				<path fill-rule="evenodd" clip-rule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm2 0c0 5.523-4.477 10-10 10S0 15.523 0 10 4.477 0 10 0s10 4.477 10 10zm-9.274 1.783L8.056 13.5v-7l2.67 1.717.33.212L13.5 10l-2.445 1.571-.33.212z"></path>
+			</symbol>
+			<symbol xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 18" id="man">
+				<path fill-rule="evenodd" clip-rule="evenodd" d="M11 5C11 6.65685 9.65685 8 8 8C6.34315 8 5 6.65685 5 5C5 3.34315 6.34315 2 8 2C9.65685 2 11 3.34315 11 5ZM13 5C13 7.76142 10.7614 10 8 10C5.23858 10 3 7.76142 3 5C3 2.23858 5.23858 0 8 0C10.7614 0 13 2.23858 13 5ZM13.9527 18C13.4853 15.7178 11.4495 14 9.00894 14H6.99106C4.55048 14 2.51468 15.7178 2.04727 18H0C0.489568 14.6077 3.43306 12 6.99106 12H9.00894C12.5669 12 15.5104 14.6077 16 18H13.9527Z"/>
+			</symbol>
+			<symbol xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 19" id="message">
+				<path fill-rule="evenodd" clip-rule="evenodd" d="M4 18v1l2-1.111L9.4 16H20V0H0v16h4v2zm4.429-3.748L6 15.6V14H2V2h16v12H8.882l-.453.252zM6 9a1 1 0 100-2 1 1 0 000 2zm5-1a1 1 0 11-2 0 1 1 0 012 0zm3 1a1 1 0 100-2 1 1 0 000 2z"></path>
+			</symbol>
+			<symbol xmlns="http://www.w3.org/2000/svg" viewBox="0 0 21 20" id="my-tasks">
+				<path fill-rule="evenodd" clip-rule="evenodd" d="M9.5 0h2v2.062A8.004 8.004 0 0118.438 9H20.5v2h-2.062a8.004 8.004 0 01-6.938 6.938V20h-2v-2.062A8.004 8.004 0 012.562 11H.5V9h2.062A8.004 8.004 0 019.5 2.062V0zm-5 10a6 6 0 1012 0 6 6 0 00-12 0zm6 2a2 2 0 100-4 2 2 0 000 4z"></path>
+			</symbol>
+			<symbol xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" id="not-agreed">
+				<path fill-rule="evenodd" clip-rule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm2 0c0 5.523-4.477 10-10 10S0 15.523 0 10 4.477 0 10 0s10 4.477 10 10zM7.707 13.707L10 11.414l2.293 2.293 1.414-1.414L11.414 10l2.293-2.293-1.414-1.414L10 8.586 7.707 6.293 6.293 7.707 8.586 10l-2.293 2.293 1.414 1.414z"></path>
+			</symbol>
+			<symbol xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 18" id="notify">
+				<path fill-rule="evenodd" clip-rule="evenodd" d="M4.18171 5.81818C4.18171 3.70946 5.89116 2 7.99989 2C10.1086 2 11.8181 3.70946 11.8181 5.81818V6.18184C11.8181 8.0344 12.8544 9.72852 13.6927 10.7582C13.8857 10.9954 14 11.2941 14 11.6248C14 12.3842 13.3844 12.9999 12.625 12.9999H3.37501C2.61561 12.9999 2 12.3842 2 11.6248C2 11.2941 2.11425 10.9955 2.30726 10.7583C3.14547 9.72855 4.18171 8.03439 4.18171 6.18184V5.81818ZM7.99989 0C4.78659 0 2.18171 2.60488 2.18171 5.81818V6.18184C2.18171 7.34634 1.49128 8.59263 0.756149 9.49577C0.283407 10.0766 0 10.8176 0 11.6248C0 13.4888 1.51104 14.9999 3.37501 14.9999H4.43713C4.7743 16.7112 6.24161 17.9992 8.00062 17.9992C9.75964 17.9992 11.2269 16.7112 11.5641 14.9999H12.625C14.489 14.9999 16 13.4888 16 11.6248C16 10.8175 15.7165 10.0764 15.2437 9.49556C14.5085 8.59252 13.8181 7.3463 13.8181 6.18184V5.81818C13.8181 2.60489 11.2132 0 7.99989 0ZM9.48112 14.9999H6.52012C6.79144 15.6104 7.38102 15.9992 8.00062 15.9992C8.62022 15.9992 9.20981 15.6104 9.48112 14.9999Z"/>
+			</symbol>
+			<symbol xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" id="open-appeals">
+				<path fill-rule="evenodd" clip-rule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm2 0c0 5.523-4.477 10-10 10S0 15.523 0 10 4.477 0 10 0s10 4.477 10 10zM9.338 13.254l6.319-5.5-1.314-1.508-5.638 4.908L6.682 9.27l-1.364 1.463L8 13.232l.659.614.68-.592z"></path>
+			</symbol>
+			<symbol xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 17" id="repeat">
+				<path fill-rule="evenodd" clip-rule="evenodd" d="M11.258 15a6.5 6.5 0 10-6.334-7.97l2.494-1.184.858 1.806L3.57 9.89l-.903.43-.43-.904L0 4.708l1.806-.858L3.02 6.4a8.5 8.5 0 112.975 8.774c-.433-.343-.43-.981-.04-1.372.39-.39 1.02-.383 1.466-.056A6.47 6.47 0 0011.258 15z"></path>
+			</symbol>
+			<symbol xmlns="http://www.w3.org/2000/svg" viewBox="0 0 17 18" id="search">
+				<path fill-rule="evenodd" clip-rule="evenodd" d="M13.582 8.083A5.79 5.79 0 112 8.083a5.79 5.79 0 0111.582 0zm-1.446 6.468a7.79 7.79 0 111.506-1.323l3.065 3.066-1.414 1.414-3.157-3.157z"></path>
+			</symbol>
+			<symbol xmlns="http://www.w3.org/2000/svg" viewBox="0 0 18 17" id="send">
+				<path fill-rule="evenodd" clip-rule="evenodd" d="M8.399 8.499l2.057 3.886 3.811-8.799-9.052 3.498L8.4 8.499zm-1.444 1.546L10.636 17 18 0 0 6.955l6.955 3.09z"></path>
+			</symbol>
+			<symbol xmlns="http://www.w3.org/2000/svg" viewBox="0 0 19 15" id="sort">
+				<path fill-rule="evenodd" clip-rule="evenodd" d="M13.65 13.549V3.963l-1.292 1.293-1.414-1.415 3-3 .707-.707.707.707 3 3-1.414 1.415-1.293-1.293v9.585h-2zm-10.5-12v9.825L1.303 9.79 0 11.308l3.5 3 .65.558.652-.558 3.5-3L7 9.789l-1.85 1.585V1.548h-2z"></path>
+			</symbol>
+			<symbol xmlns="http://www.w3.org/2000/svg" viewBox="0 0 8 4" id="triangle-down">
+				<path d="M8 0H0l4 4 4-4z"></path>
+			</symbol>
+			<symbol xmlns="http://www.w3.org/2000/svg" viewBox="0 0 5 8" id="triangle-right">
+				<path d="M.5 0v8l4-4-4-4z"></path>
+			</symbol>
+			<symbol xmlns="http://www.w3.org/2000/svg" viewBox="0 0 9 5" id="triangle-up">
+				<path d="M8.358 4.5h-8l4-4 4 4z"></path>
+			</symbol>
+			<symbol xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 19" id="warn">
+				<path fill-rule="evenodd" clip-rule="evenodd" d="M17.187 17L10 2.988 2.813 17h14.374zM11.78 2.075c-.744-1.45-2.816-1.45-3.56 0L1.035 16.087C.35 17.418 1.317 19 2.814 19h14.373c1.496 0 2.462-1.582 1.78-2.913L11.78 2.075zM9 13h2v2H9v-2zm2-6H9v5h2V7z"></path>
+			</symbol>
+		</svg>
+
+
+		<!--
+		<div class="header">
+			<div class="container">
+		
+				<div class="row">
+		
+					<div class="col-8 col-sm-6 d-flex align-items-center">
+						<div class="logo-wrap">
+							<div class="d-flex align-items-center">
+								<a href="javascript:void(0)" class="logo d-flex align-items-center"><img src="images/userpics/logo.png" alt=""></a>
+								<div class="d-lg-flex align-items-center logo-text-wrap ml-15">
+									<div class="ml-lg-15 logo-slogan">Система управления эксплуатацией и учета ИТ- активов</div>
+								</div>
+							</div>
+						</div>
+					</div>
+		
+					<div class="col-4 col-sm-6 d-sm-none">
+						<div class="text-right">
+							<div class="d-inline-block user-header-control" data-toggle="collapse" data-target="#user-header-controls"><svg class="svg-icon"><use xlink:href="#man"></use></svg></div>
+						</div>
+					</div>
+
+					<div class="col-12 col-sm-6 d-sm-flex justify-content-end align-items-center user-header-controls-collapse" id="user-header-controls">
+						
+					</div>
+		
+				</div>
+		
+			</div>
+		</div>
+	-->
+
+		<div class="content container">
+			<div class="row">
+		
+				<div class="col-12" id="authForm"></div>
+
+				<div class="col-12">
+
+				<!-- <div id="authForm" style="padding: 5px;"></div> -->
+				<div id="mainpage"></br>Подключение к БД</br><img src='assets/images/ajax-loader.gif'></div>
+		
+		</div>
+
+    </div>
+</div>
+
+
+		<script src="assets/js/jquery.min.js"></script>
+		<script src="assets/js/bootstrap.min.js"></script>
+		<script src="assets/js/moment.min.js"></script>
+		<script src="assets/js/daterangepicker.min.js"></script>
+		<script src="assets/js/owl.carousel.min.js"></script>
+		<script src="assets/js/jquery.fancybox.js"></script>
+		<script src="assets/js/jquery.arcticmodal.js"></script>
+
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/mustache.js/4.1.0/mustache.min.js" integrity="sha512-HYiNpwSxYuji84SQbCU5m9kHEsRqwWypXgJMBtbRSumlx1iBB6QaxgEBZHSHEGM+fKyCX/3Kb5V5jeVXm0OglQ==" crossorigin="anonymous"></script>
+		<!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.js" integrity="sha512-uURl+ZXMBrF4AwGaWmEetzrd+J5/8NRkWAvJx5sbPSSuOb0bZLqf+tOzniObO00BjHa/dD7gub9oCGMLPQHtQA==" crossorigin="anonymous"></script> -->
+
+		<script src="assets/js/script.js?v=1.0"></script>
+		
+		<script type="text/javascript" src="v-can_site.js?vcanversion=1602012087"></script>
+		<script type="text/javascript" src="v-can_voice.js?vcanversion=1602012087"></script>
+		<link rel="stylesheet" type="text/css" href="v-can_site.css?vcanversion=1602012087">
+		<link rel="stylesheet" type="text/css" href="auth.css?vcanversion=1602012087">
+		<link rel="stylesheet" type="text/css" href="itil_ipc.css?vcanversion=1602012087">
+		<script type="text/javascript" src="itil_ipc.js?vcanversion=1602012087&v=1.0.2"></script>
+		<!-- <link rel="stylesheet" type="text/css" href="bootstrap/css/bootstrap.css?vcanversion=1602012087"> -->
+		<script type="text/javascript" src="nicedit.js?vcanversion=1602012087"></script>
+		<link rel="stylesheet" type="text/css" href="xcal.css?vcanversion=1602012087"/>
+		<script type="text/javascript" src="xcal.js?vcanversion=1602012087"></script> 
+		<link rel="stylesheet" type="text/css" href="glider.css?vcanversion=1602012087"/>
+		<script type="text/javascript" src="glider.js?vcanversion=1602012087"></script> 
+		<!-- <link rel="stylesheet" type="text/css" href="font-awesome.css?vcanversion=1602012087"> -->
+		<!-- <script type="text/javascript" src="lightbox/js/prototype.js?vcanversion=1602012087"></script> -->
+		<!-- <script type="text/javascript" src="lightbox/js/scriptaculous.js?vcanversion=1602012087"></script> -->
+		<!-- <script type="text/javascript" src="lightbox/js/lightbox.js?vcanversion=1602012087"></script> -->
+		<!-- <link rel="stylesheet" href="lightbox/css/lightbox.css?vcanversion=1602012087" type="text/css" media="screen"/> -->
+		<script type="text/javascript" src="v-can_site_connection.js?vcanversion=1602012087"></script>
+		<script language='javascript'>
+			ЗагрузкаГлавнойСтраницы();
+		</script>
+
+		<div id="test"></div>
+
+		<script id="structure" type="x-tmpl-mustache">
+			<div class="structure">
+
+				{{#types}}
+				<div class="structure-item">
+					<div class="structure-name" data-uid="{{{Код}}}" onclick="ToggleStructureItem(this); {{^child}} LoadConfigurationUnits(this, '{{{Код}}}'); {{/child}}">
+						<span class="structure-pic"></span>
+						<span>{{Наименование}}</span>
+					</div>
+
+					<div class="structure-body">
+						<div class="structure">
+
+							{{#child}}
+							<div class="structure-item">
+								<div class="structure-name" data-uid="{{{Код}}}" onclick="ToggleStructureItem(this); LoadConfigurationUnits(this, '{{{Код}}}')">
+									<span class="structure-pic"></span>
+									<span>{{Наименование}}</span>
+								</div>
+								<div class="structure-body">
+
+									<div class="structure">
+										<div class="structure-item empty">
+											<div class="structure-name">
+												<span class="structure-pic"></span>
+												<span class="structure-item-empty-rect"></span>
+											</div>
+										</div>
+										<div class="structure-item empty">
+											<div class="structure-name">
+												<span class="structure-pic"></span>
+												<span class="structure-item-empty-rect"></span>
+											</div>
+										</div>
+									</div>
+
+								</div>
+							</div>
+							{{/child}}
+							{{^child}}
+							<div class="structure-item empty">
+								<div class="structure-name">
+									<span class="structure-pic"></span>
+									<span class="structure-item-empty-rect"></span>
+								</div>
+							</div>
+							<div class="structure-item empty">
+								<div class="structure-name">
+									<span class="structure-pic"></span>
+									<span class="structure-item-empty-rect"></span>
+								</div>
+							</div>
+							{{/child}}
+
+						</div> <!-- .structure -->
+					</div> <!-- .structure-body -->
+
+				</div>
+				{{/types}}
+
+			</div>
+		</script>
+		<script id="structure-item" type="x-tmpl-mustache">
+			<div class="structure">
+				{{#units}}
+				<div class="structure-item can-select">
+					<div class="structure-name">
+						<span class="structure-pic" {{#photo}}style="background-image: url('data:image/jpeg;base64,{{{photo}}}');"{{/photo}}></span>
+						<span>{{name}}</span>
+						<span class="btn btn-primary" onclick="SelectConfigurationUnit(this)" data-uid="{{{uid}}}" data-name="{{name}}" {{{ref}}}>Выбрать</span>
+					</div>
+				</div>
+				{{/units}}
+				{{^units}}
+				<div class="structure-item">
+					<div class="structure-name">
+						<span>Пусто</span>
+					</div>
+				</div>
+				{{/units}}
+			</div>
+		</script>
+		<script id="active-item" type="x-tmpl-mustache">
+			<div class="structure">
+				{{#assets}}
+				<div class="structure-item can-select">
+					<div class="structure-name">
+						<span class="structure-pic"></span>
+						<span>{{name}}</span>
+						<span class="btn btn-primary" onclick="SelectConfigurationUnit(this)" data-uid="{{{uid}}}" data-name="{{name}}" {{{ref}}}>Выбрать</span>
+					</div>
+				</div>
+				{{/assets}}
+				{{^assets}}
+				<div class="structure-item">
+					<div class="structure-name">
+						<span>Пусто</span>
+					</div>
+				</div>
+				{{/assets}}
+			</div>
+		</script>
+
+		<script id="notify-user-items-popup" type="x-tmpl-mustache">
+			<div class="structure-wrap">
+                <div class="structure">
+
+					{{#items}}
+					{{#name}}
+					<div class="structure-item">
+                        <div class="structure-name" ref="{{{ref}}}" onclick="SelectNotifyUser(this);">
+                            <span>{{name}}</span>
+                        </div>
+                    </div>
+					{{/name}}
+					{{/items}}
+
+				</div>
+			</div>
+		</script>
+		<script id="notify-users" type="x-tmpl-mustache">
+			{{{#Строки}}}
+			<div class="col-12 mt-15">
+
+				<div class="d-flex flex-wrap attached-file-list">
+					{{#Строки}}
+					<a href="javascript:void(0)" class="attached-file d-flex align-items-center user-notify" ref={{{Уведомляемый.Ссылка}}}>
+						<span>{{Уведомляемый.Представление}}</span>
+						<svg onclick="DeleteNotifyUser(this);" class="svg-icon-small"><use xlink:href="#close"></use></svg>
+					</a>
+					{{/Строки}}
+				</div>
+
+			</div>
+			{{{/Строки}}}
+		</script>
+
+		<script id="messagebox" type="x-tmpl-mustache">
+			<div class="cmodal">
+				<div class="cmodal-close" onclick="СкрытьОкноСообщения()"><svg><use xlink:href="#close"></use></svg></div>
+				<div class="cmodal-body">
+					<svg width="50" height="50" viewBox="0 0 50 50" fill="none" xmlns="http://www.w3.org/2000/svg">
+						<path fill-rule="evenodd" clip-rule="evenodd" d="M33.7072 20.7071L23.0001 31.4142L17.293 25.7071L18.7072 24.2929L23.0001 28.5858L32.293 19.2929L33.7072 20.7071Z" fill="#0046FE"/>
+						<rect x="1" y="1" width="48" height="48" rx="24" stroke="#0046FE" stroke-width="2"/>
+					</svg>		
+					<br>
+					<br>
+					{{{message}}}
+				</div>
+			</div>
+		</script>
+
+
+		<script id="services" type="x-tmpl-mustache">
+			<div class="structure">
+
+				{{#services}}
+					{{#group}}
+						<div class="structure-item">
+							<div class="structure-name" data-uid="{{{uid}}}" onclick="ToggleStructureItem(this); RenderServices(this)">
+								<span class="structure-pic" {{#photo}}style="background-image: url('data:image/png;base64,{{{photo}}}');"{{/photo}}></span>
+								<span>{{name}}</span>
+							</div>
+
+							<div class="structure-body">
+								<div class="structure">
+									<div class="structure-item empty">
+										<div class="structure-name">
+											<span class="structure-pic"></span>
+											<span class="structure-item-empty-rect"></span>
+										</div>
+									</div>
+									<div class="structure-item empty">
+										<div class="structure-name">
+											<span class="structure-pic"></span>
+											<span class="structure-item-empty-rect"></span>
+										</div>
+									</div>
+								</div> <!-- .structure -->
+							</div> <!-- .structure-body -->
+						</div>
+					{{/group}}
+					{{^group}}
+						<div class="structure-item can-select">
+							<div class="structure-name">
+								<span class="structure-pic" {{#photo}}style="background-image: url('data:image/png;base64,{{{photo}}}');"{{/photo}}></span>
+								<span>{{name}}</span>
+								<span class="btn btn-primary" onclick="ВыборДоступнойУслуги(this); CloseServicePopup();"
+									uid="{{{uid}}}"
+									ref="{{{ref}}}" 
+									name="{{name}}"
+									topictemplate="{{{topictemplate}}}"
+									servicedescr="{{{servicedescr}}}"
+									routename="{{{routename}}}"
+									routeref="{{{routeref}}}"
+									servicename="{{{extref_servicename}}}"
+									serviceref="{{{serviceref}}}"
+								>Выбрать</span>
+							</div>
+						</div>
+					{{/group}}
+				{{/services}}
+
+			</div>
+		</script>
+
+
+		<script id="filterItemBody" type="x-tmpl-mustache">
+			<div class="filter-item-body">
+
+				<div class="filter-item-scroll">
+					<div class="ftable">
+
+						{{#items}}
+						<a href="javascript:void(0)" class="frow" ref="{{{ref}}}" presentation="{{presentation}}" onclick="SelectFilter(this)">
+							<span class="row">
+								<span class="col-12 col-sm-6">{{presentation}}</span>
+								{{#groupname}}
+								<span class="col-12 col-sm-6">- {{groupname}}</span>
+								{{/groupname}}
+							</span>
+						</a>
+						{{/items}}
+
+					</div>
+				</div>
+
+			</div>
+		</script>
+				<script id="filterItemBodyEscalate" type="x-tmpl-mustache">
+			<div class="filter-item-bodyEscalate">
+
+				<div class="filter-item-scrollEscalate">
+					<div class="ftable">
+
+						{{#items}}
+						<a href="javascript:void(0)" class="frow" ref="{{{ref}}}" presentation="{{presentation}}" onclick="SelectFilterEscalate(this)">
+							<span class="row">
+								<span class="col-12 col-sm-6">{{presentation}}</span>
+								{{#groupname}}
+								<span class="col-12 col-sm-6">- {{groupname}}</span>
+								{{/groupname}}
+							</span>
+						</a>
+						{{/items}}
+
+					</div>
+				</div>
+
+			</div>
+		</script>
+        </body>
+</html>
