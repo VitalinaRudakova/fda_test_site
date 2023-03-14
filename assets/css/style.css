@@ -957,7 +957,7 @@ body.custom-modal-open {
 
     /* header */
     .logo {
-        /* width: 70px; */
+        width: 100px;
         height: 70px;
     }
     .logo-text {
