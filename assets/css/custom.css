@@ -1,0 +1,200 @@
+.--custom.container,
+.--custom .container {
+  max-width: none;
+  position: relative;
+}
+
+/* logo */
+.--custom .logo-text-wrap {
+  margin-left: 0;
+}
+
+.--custom .logo-slogan {
+  padding: 0;
+  margin-left: 45px;
+}
+
+/* aside */
+.--custom .aside-menu {
+  position: absolute;
+  top: 0;
+  left: 25px;
+  bottom: auto;
+  width: 106px;
+  padding-left: 0;
+}
+
+.--custom .aside-menu ~ * {
+  position: relative !important;
+  top: auto !important;
+  left: auto !important;
+  float: initial !important;
+  margin-left: 160px !important;
+}
+
+.--custom .aside-menu ~ *:not(.row) > .row > * {
+  flex: initial;
+  max-width: none;
+  position: initial;
+  padding-left: initial;
+  padding-top: 0;
+  margin-top: 0;
+}
+
+/* header */
+.--custom .header .user-name {
+  display: initial !important;
+}
+
+.--custom #ListHeaderForm {
+  padding: 0 !important;
+}
+
+/* header-menu */
+.--custom #ListHeaderForm > div:first-child {
+  position: relative;
+  display: flex !important;
+  flex-wrap: nowrap;
+  width: 100%;
+}
+.--custom #ListHeaderForm > div > .icon-filter {
+  padding: 0;
+  flex: 1;
+}
+.--custom #ListHeaderForm .aside-menu-link {
+  display: flex !important;
+  flex-direction: column;
+  cursor: pointer;
+}
+.--custom #ListHeaderForm .icon-filter span {
+  margin: 0;
+  text-align: center;
+}
+
+/* header-filter */
+.--custom #ListHeaderForm ._inputGroup_ {
+  max-width: none !important;
+  display: flex;
+  width: auto !important;
+  margin: 0 -5px;
+  padding-left: 0 !important;
+  padding-right: 0 !important;
+}
+.--custom #ListHeaderForm ._inputGroup_ .inputfield {
+  flex: 1;
+  margin: 0 5px;
+  padding: 0 !important;
+}
+.--custom #ListHeaderForm ._inputGroup_ > *:not(.inputfield) {
+  display: flex;
+  align-items: center;
+  float: none !important;
+  padding: 0 !important;
+}
+.--custom #ListHeaderForm ._inputGroup_ .inputfield .input-group {
+  width: 100% !important;
+  max-width: none !important;
+}
+
+.--custom .input-group {
+  max-width: none;
+}
+.--custom .input-group .form-control {
+  padding-right: 0;
+}
+.--custom .input-group .input-addon-btn {
+  display: flex;
+  align-items: center;
+}
+.--custom .input-group .input-group-addon {
+  display: flex;
+  align-items: center;
+  background: none;
+}
+
+/* table */
+.--custom .listContainer table {
+  width: 100% !important;
+}
+.--custom .listContainer table tbody {
+  width: auto !important;
+}
+.--custom .listContainer table.fixed-header tbody {
+  width: 100% !important;
+}
+.--custom th.listsorting {
+  padding-right: 20px;
+}
+
+.--custom .icon-service {
+  min-height: 107px;
+  border-radius: 6px;
+  box-sizing: border-box;
+}
+
+/* pages */
+#ГруппаПоискаУслуги > * {
+  padding: 10px 0 !important;
+}
+#ДоступныеУслуги {
+  margin: 0 !important;
+}
+#ОписаниеУслуги {
+  padding: 10px 0 !important;
+}
+
+#СписокОбращенийТаблица th:nth-child(2),
+#СписокОбращенийТаблица td:nth-child(2) {
+  width: 10% !important;
+}
+
+#СписокОбращенийТаблица th:last-child,
+#СписокОбращенийТаблица td:last-child {
+  width: 14% !important;
+}
+
+.--custom #МастерНовогоОбращенияСтраница2,
+.--custom #МастерНовогоОбращенияСтраница2 > .col-12 {
+  padding-right: 0 !important;
+  width: 100% !important;
+}
+.--custom .custom-input,
+.--custom .radio-group {
+  width: auto !important;
+}
+
+@media screen and (min-width: 1920px) {
+  .--custom.container {
+    width: 1920px;
+    margin: 0 auto !important;
+  }
+}
+
+@media screen and (max-width: 1419px) {
+  .--custom .aside-menu {
+    left: 0;
+  }
+  .--custom .aside-menu ~ * {
+    margin-left: 106px !important;
+  }
+
+  .--custom .logo-wrap {
+    position: relative;
+    left: -30px;
+  }
+  .--custom .logo-slogan {
+    margin-left: 21px;
+  }
+
+  .--custom .table td,
+  .--custom .table th {
+    font-size: 14px;
+  }
+}
+
+@media screen and (max-width: 1279px) {
+  .--custom .icon-service {
+    min-width: 130px;
+    padding: 10px 15px;
+  }
+}
