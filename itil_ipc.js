@@ -2042,7 +2042,8 @@ function ЗакрытьОбращение(elem) {
 }
 
 function cancelTask(){
-	var userComment = prompt("Обращение будет отменено. Укажите причину и нажмите ОК.", "");
+	var userComment;
+	while (!(userComment = prompt("Обращение будет отменено. Укажите причину и нажмите ОК.", ""))) alert ("Введите комментарий");
 	if (userComment) {
 		var taskID = АтрибутЭлементаHTML('cancelTaskButton', 'objectref');
 		var link = ''; 
@@ -2090,7 +2091,8 @@ function cancelTask(){
 }
 
 function revisionTask(){
-	var userComment = prompt("Обращение будет отправлено на доработку. Укажите причину и нажмите ОК.", "");
+	var userComment;
+	while (!(userComment = prompt("Обращение будет отправлено на доработку. Укажите причину и нажмите ОК.", ""))) alert ("Укажите причину возврата");
 	if (userComment) {
 		var taskID = АтрибутЭлементаHTML('revisionTaskButton', 'objectref');
 		var link = ''; 
@@ -2138,7 +2140,8 @@ function revisionTask(){
 }
 
 function TaskAgreementTrue(){
-	var userComment = prompt("Обращение будет согласовано. Укажите комментарий и нажмите ОК.", "");
+	var userComment;
+	while (!(userComment = prompt("Обращение будет согласовано. Укажите комментарий и нажмите ОК.", ""))) alert ("Введите комментарий");
 	if (userComment) {
 		var taskID = АтрибутЭлементаHTML('TaskAgreementTrueButton', 'objectref');
 		var link = ''; 
@@ -2186,7 +2189,8 @@ function TaskAgreementTrue(){
 }
 
 function TaskAgreementFalse(){
-	var userComment = prompt("Обращение будет отклонено. Укажите причину и нажмите ОК.", "");
+	var userComment;
+	while (!(userComment = prompt("Обращение будет отклонено. Укажите причину и нажмите ОК.", ""))) alert ("Укажите причину");
 	if (userComment) {
 		var taskID = АтрибутЭлементаHTML('TaskAgreementFalseButton', 'objectref');
 		var link = ''; 
